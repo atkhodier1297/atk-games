@@ -6,7 +6,6 @@ import Home from "./Home";
 
 function App() {
   return (
-
     <>
       <Routes>
         <Route path="/" element={<Home/>}/>
@@ -14,7 +13,6 @@ function App() {
         <Route path="/login" element={<Login/>}/>
       </Routes>
     </>
-  
   );
 }
 

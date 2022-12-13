@@ -6,7 +6,7 @@ function Signup() {
     <br></br>
     <br></br>
     <br></br>
-    <div>Hi</div>
+    <div>Signup</div>
     </>
   )
 }
