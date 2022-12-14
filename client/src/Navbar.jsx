@@ -1,28 +1,48 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
+import LogoutButton from './LogoutButton'
+import SignupButton from './SignupButton'
+import LoginButton from './LoginButton'
 
 function Navbar() {
 
     const navigate = useNavigate()
+    const [showLogin, setShowLogin] = useState(true)
+    const [showLogout, setShowLogout] = useState(false)
+    const [showSignup, setShowSignup] = useState(true)
+    const currentUser = sessionStorage.getItem("user_id")
+
+    useEffect(() => {
+      if (currentUser) {
+        setShowLogin(false)
+       setShowLogout(true)
+       setShowSignup(false)
+      }
+      else {
+        setShowLogin(true)
+        setShowLogout(false)
+        setShowSignup(true)
+      } 
+    },[currentUser])
 
     function navHome() {
         navigate("/")
       }
 
-      function navLogin() {
-        navigate("/login")
-    }
+    //   function navLogin() {
+    //     navigate("/login")
+    // }
 
-    function navSignup() {
-        navigate("/signup")
-    }
+    // function navSignup() {
+    //     navigate("/signup")
+    // }
 
-    function navLogout() {
-      navigate("/")
-    }
+    // function navLogout() {
+    //   sessionStorage.clear()
+    //   navigate("/")
+    // }
 
     function navGames() {
-      sessionStorage.clear()
       navigate("/games")
     }
 
@@ -40,15 +60,18 @@ function Navbar() {
     <a class="item">My List</a>
     <a class="item">Cart</a>
     <div class="right menu">
-      <div class="item">
+      {showLogin ? <LoginButton/> : null}
+      {/* <div class="item">
         <a onClick={navLogin} class="ui orange button">Log in</a>
-      </div>
-      <div class="item">
+      </div> */}
+      {showSignup ? <SignupButton/> : null}
+      {/* <div class="item">
         <a onClick={navSignup} class="ui orange button">Sign Up</a>
-      </div>
-      <div class="item">
+      </div> */}
+      {showLogout ? <LogoutButton/> : null}
+      {/* <div class="item">
         <a onClick={navLogout} class="ui orange button">Log Out</a>
-      </div>
+      </div> */}
     </div>
   </div>
 </div>
