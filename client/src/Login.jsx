@@ -37,7 +37,7 @@ function Login() {
                 .then(() => navigate("/games"))
             }
             else {
-                setErrors("Invalid username or password")
+                setErrors("Invalid username or password!")
             }
         })
     }
@@ -74,7 +74,6 @@ function Login() {
         onClick={handleLogIn}
         className ="ui fluid large orange submit button">Login</div>
       </div>
-      <div className ="ui error message"></div>
     </form>
     <div className ="ui message">
       New to us? <button class="ui orange button" onClick={handleSignup}>Sign Up</button>
