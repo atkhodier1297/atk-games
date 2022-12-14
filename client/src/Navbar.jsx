@@ -17,7 +17,12 @@ function Navbar() {
         navigate("/signup")
     }
 
+    function navLogout() {
+      navigate("/")
+    }
+
     function navGames() {
+      sessionStorage.clear()
       navigate("/games")
     }
 
@@ -40,6 +45,9 @@ function Navbar() {
       </div>
       <div class="item">
         <a onClick={navSignup} class="ui orange button">Sign Up</a>
+      </div>
+      <div class="item">
+        <a onClick={navLogout} class="ui orange button">Log Out</a>
       </div>
     </div>
   </div>
