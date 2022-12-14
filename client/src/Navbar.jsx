@@ -17,6 +17,10 @@ function Navbar() {
         navigate("/signup")
     }
 
+    function navGames() {
+      navigate("/games")
+    }
+
   return (
     <div class="ui medium top fixed hidden menu">
        <img
@@ -27,7 +31,7 @@ function Navbar() {
             />
   <div class="ui container">
     <a onClick={navHome} class="active item">Home</a>
-    <a class="item">Games</a>
+    <a onClick={navGames} class="item">Games</a>
     <a class="item">My List</a>
     <a class="item">Cart</a>
     <div class="right menu">

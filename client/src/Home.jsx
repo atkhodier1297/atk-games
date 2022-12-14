@@ -6,6 +6,7 @@ function Home() {
     <br></br>
     <br></br>
     <br></br>
+    
     <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
