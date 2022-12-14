@@ -19,6 +19,12 @@ function Navbar() {
 
   return (
     <div class="ui medium top fixed hidden menu">
+       <img
+              className="adam-pic"
+              src="https://cdn.discordapp.com/attachments/706587247197159578/1052392924761047122/Screenshot_2022-12-13_201326.png"
+              height={55}
+              alt=""
+            />
   <div class="ui container">
     <a onClick={navHome} class="active item">Home</a>
     <a class="item">Games</a>
