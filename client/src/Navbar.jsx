@@ -7,16 +7,20 @@ import LoginButton from './LoginButton'
 function Navbar() {
 
     const navigate = useNavigate()
+
+    
+
     const [showLogin, setShowLogin] = useState(true)
     const [showLogout, setShowLogout] = useState(false)
     const [showSignup, setShowSignup] = useState(true)
+
     const currentUser = sessionStorage.getItem("user_id")
 
     useEffect(() => {
       if (currentUser) {
         setShowLogin(false)
-       setShowLogout(true)
-       setShowSignup(false)
+        setShowLogout(true)
+        setShowSignup(false)
       }
       else {
         setShowLogin(true)
@@ -29,21 +33,8 @@ function Navbar() {
         navigate("/")
       }
 
-    //   function navLogin() {
-    //     navigate("/login")
-    // }
-
-    // function navSignup() {
-    //     navigate("/signup")
-    // }
-
-    // function navLogout() {
-    //   sessionStorage.clear()
-    //   navigate("/")
-    // }
-
     function navGames() {
-      navigate("/games")
+      navigate("/products")
     }
 
   return (
@@ -61,17 +52,8 @@ function Navbar() {
     <a class="item">Cart</a>
     <div class="right menu">
       {showLogin ? <LoginButton/> : null}
-      {/* <div class="item">
-        <a onClick={navLogin} class="ui orange button">Log in</a>
-      </div> */}
       {showSignup ? <SignupButton/> : null}
-      {/* <div class="item">
-        <a onClick={navSignup} class="ui orange button">Sign Up</a>
-      </div> */}
       {showLogout ? <LogoutButton/> : null}
-      {/* <div class="item">
-        <a onClick={navLogout} class="ui orange button">Log Out</a>
-      </div> */}
     </div>
   </div>
 </div>
