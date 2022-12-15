@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import LogoutButton from './LogoutButton'
 import SignupButton from './SignupButton'
 import LoginButton from './LoginButton'
+import StripeCheckout from 'react-stripe-checkout';
 
 function Navbar() {
 
@@ -35,6 +36,25 @@ function Navbar() {
       navigate("/products")
     }
 
+    const onToken = (token) => {
+
+      const charge = {
+          token: token.id
+      };
+  
+      const config = {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ charge: charge, price: price * 100 })
+      };
+  
+      fetch(CHARGES_URL, config)
+      .then(res => res.json())
+      .then(console.log)
+  }
+
   return (
     <div class="ui medium top fixed hidden menu">
        <img
@@ -47,7 +67,7 @@ function Navbar() {
     <a onClick={navHome} class="active item">Home</a>
     <a onClick={navGames} class="item">Games</a>
     <a class="item">My List</a>
-    <a class="item">Cart</a>
+    <a> <StripeCheckout token={onToken} stripeKey={process.env.REACT_APP_STRIPE_KEY}/></a>
     <div class="right menu">
       {showLogin ? <LoginButton/> : null}
       {showSignup ? <SignupButton/> : null}
