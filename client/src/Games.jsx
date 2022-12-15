@@ -7,8 +7,6 @@ function Games({ product }) {
   return (
     <>
     <br></br>
-    <br></br>
-    <br></br>
     <div class="ui card">
   <div class="image">
     <img alt='game' src={img_url}/>

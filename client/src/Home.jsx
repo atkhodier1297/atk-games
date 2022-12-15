@@ -23,11 +23,11 @@ function Home() {
               className="adam-pic"
               src="https://ca.slack-edge.com/T02MD9XTF-U040NP41CSZ-ef8b80c53d03-512"
               height={75}
-              alt=""
+              alt="adam"
             />
         </div>
         <div class="six wide right floated column">
-          <img alt="" src="https://cdn.discordapp.com/attachments/706587247197159578/1052392924761047122/Screenshot_2022-12-13_201326.png" class="ui large rounded image"/>
+          <img alt="logo" src="https://cdn.discordapp.com/attachments/706587247197159578/1052392924761047122/Screenshot_2022-12-13_201326.png" class="ui large rounded image"/>
         </div>
       </div>
       <div class="ui vertical stripe quote segment">
