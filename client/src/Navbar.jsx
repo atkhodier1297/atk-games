@@ -8,8 +8,6 @@ function Navbar() {
 
     const navigate = useNavigate()
 
-    
-
     const [showLogin, setShowLogin] = useState(true)
     const [showLogout, setShowLogout] = useState(false)
     const [showSignup, setShowSignup] = useState(true)

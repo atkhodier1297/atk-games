@@ -15,7 +15,7 @@ function Signup() {
 
   useEffect(() => {
     if (currentUser) {
-     navigate("/games")
+     navigate("/products")
     } 
   },[currentUser, navigate])
 
@@ -32,7 +32,7 @@ function Signup() {
             if (r.ok) {
                 r.json()
                 .then(data => window.sessionStorage.setItem("user_id", data.id))
-                .then(() => navigate("/games"))
+                .then(() => navigate("/products"))
             }
             else {
               setErrors("Missing fields, you must have an email, username, and password!")

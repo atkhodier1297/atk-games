@@ -13,7 +13,7 @@ function Login() {
 
     useEffect(() => {
       if (currentUser) {
-       navigate("/games")
+       navigate("/products")
       } 
     },[currentUser, navigate])
 
@@ -34,7 +34,7 @@ function Login() {
             if (r.ok) {
                 r.json()
                 .then(data => window.sessionStorage.setItem("user_id", data.id))
-                .then(() => navigate("/games"))
+                .then(() => navigate("/products"))
             }
             else {
                 setErrors("Invalid username or password!")
