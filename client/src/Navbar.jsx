@@ -7,38 +7,40 @@ import LoginButton from './LoginButton'
 import AddButton from './AddButton'
 
 function Navbar() {
-
+ 
     const navigate = useNavigate()
 
     const [showLogin, setShowLogin] = useState(true)
     const [showLogout, setShowLogout] = useState(false)
     const [showSignup, setShowSignup] = useState(true)
-    const [showAdd, setShowAdd] = useState(false)
+    const [currentUser, setCurrentUser] = useState({})
 
-    const currentUser = sessionStorage.getItem("user_id")
-
-    // useEffect(() => {
-    //   if (currentUser.admin===true) {
-    //   setShowAdd(true)
-    //   }
-    //   else {
-    //     console.log("no admin")
-    //   }
-    // },[currentUser])
+    const currentUserId = sessionStorage.getItem("user_id")
 
     useEffect(() => {
-      if (currentUser) {
-        setShowAdd(true)
-        setShowLogin(false)
-        setShowLogout(true)
-        setShowSignup(false)
+      if (currentUserId) {
+        console.log(currentUserId)
+        fetch(`/users/${currentUserId}`)
+        .then(r => r.json())
+        .then(user => {
+          setCurrentUser(user)
+          setShowLogin(false)
+          setShowLogout(true)
+          setShowSignup(false)
+        })
       }
       else {
         setShowLogin(true)
         setShowLogout(false)
         setShowSignup(true)
-      } 
-    },[currentUser])
+      }
+    },[currentUserId])
+
+    // useEffect(() => {
+    //   if (currentUser===1) {
+    //     setShowAdd(true)
+    //   }
+    // },[])
 
     function navHome() {
         navigate("/")
@@ -78,13 +80,13 @@ function Navbar() {
   <div class="ui container">
     <a onClick={navHome} class="active item">Home</a>
     <a onClick={navGames} class="item">Games</a>
-    <a class="item">My List</a>
-    {showAdd ? <AddButton/> : null}
+    {/* <a class="item">My List</a> */}
+    {currentUser.admin ? <AddButton/> : null}
     {/* <a> <StripeCheckout token={onToken} stripeKey={process.env.REACT_APP_STRIPE_KEY}/></a> */}
     <div class="right menu">
       {showLogin ? <LoginButton/> : null}
       {showSignup ? <SignupButton/> : null}
-      {showLogout ? <LogoutButton/> : null}
+      {showLogout ? <LogoutButton setCurrentUser={setCurrentUser}/> : null}
     </div>
   </div>
 </div>

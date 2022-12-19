@@ -4,6 +4,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Home from "./Home";
 import GameContainer from "./GameContainer";
+import Navbar from "./Navbar";
 
 function App() {
 
@@ -16,8 +17,6 @@ function App() {
       .then((data) => setProducts(data));
   }, []);
 
-  //console.log(products)
-
   function handleSearch(e) {
     setSearch(e.target.value)
   }
@@ -28,6 +27,7 @@ function App() {
 
   return (
     <>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/signup" element={<Signup/>}/>

@@ -2,7 +2,8 @@ import React from 'react'
 
 function AddButton() {
   return (
-    <a class="item">Cart</a>
+    <a class="item">Add Game</a>
+  
   )
 }
 

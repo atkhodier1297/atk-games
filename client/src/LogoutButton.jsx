@@ -1,11 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function LogoutButton() {
+function LogoutButton({ setCurrentUser }) {
 
     const navigate = useNavigate()
 
     function navLogout() {
+        setCurrentUser({})
         sessionStorage.clear()
         navigate("/")
       }
