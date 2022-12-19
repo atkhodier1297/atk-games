@@ -9,12 +9,7 @@ import AddButton from './AddButton'
 function Navbar() {
  
     const navigate = useNavigate()
-
-    const [showLogin, setShowLogin] = useState(true)
-    const [showLogout, setShowLogout] = useState(false)
-    const [showSignup, setShowSignup] = useState(true)
     const [currentUser, setCurrentUser] = useState({})
-
     const currentUserId = sessionStorage.getItem("user_id")
 
     useEffect(() => {
@@ -24,23 +19,9 @@ function Navbar() {
         .then(r => r.json())
         .then(user => {
           setCurrentUser(user)
-          setShowLogin(false)
-          setShowLogout(true)
-          setShowSignup(false)
         })
       }
-      else {
-        setShowLogin(true)
-        setShowLogout(false)
-        setShowSignup(true)
-      }
     },[currentUserId])
-
-    // useEffect(() => {
-    //   if (currentUser===1) {
-    //     setShowAdd(true)
-    //   }
-    // },[])
 
     function navHome() {
         navigate("/")
@@ -84,9 +65,9 @@ function Navbar() {
     {currentUser.admin ? <AddButton/> : null}
     {/* <a> <StripeCheckout token={onToken} stripeKey={process.env.REACT_APP_STRIPE_KEY}/></a> */}
     <div class="right menu">
-      {showLogin ? <LoginButton/> : null}
-      {showSignup ? <SignupButton/> : null}
-      {showLogout ? <LogoutButton setCurrentUser={setCurrentUser}/> : null}
+      {currentUserId ? null : <LoginButton/>}
+      {currentUserId ? null : <SignupButton/>}
+      {currentUserId ? <LogoutButton setCurrentUser={setCurrentUser}/> : null}
     </div>
   </div>
 </div>
