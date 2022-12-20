@@ -2,9 +2,9 @@ import React from 'react'
 import Games from "./Games";
 import Search from './Search';
 
-function GameContainer({ products, search, handleSearch }) {
+function GameContainer({ products, search, handleSearch, inCart, addToCart, removeFromCart}) {
     const eachProduct = products.map((product) => (
-        <Games product={product} key={product.id}/>
+        <Games addToCart={addToCart} removeFromCart={removeFromCart} inCart={inCart} product={product} key={product.id}/>
     ))
   return (
     <>

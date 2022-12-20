@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Games({ product }) {
+function Games({ product, inCart, addToCart, removeFromCart }) {
 
   const { name, description, price, img_url, rating, category } = product
+
+  const cartButton = inCart.includes(product)
 
   return (
     <>
@@ -30,7 +32,9 @@ function Games({ product }) {
       {price}.00
     </p>
   </div>
-  <p class="ui orange button">Add to Cart</p>
+  {cartButton ? <p onClick={() => removeFromCart(product)} class="ui orange button">Remove Cart</p> : 
+  <p onClick={() => addToCart(product)} class="ui orange button">Add to Cart</p>
+  }
   <p class="ui purple button">Add to My List</p>
 </div>
     </>

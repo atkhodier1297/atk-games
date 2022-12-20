@@ -5,11 +5,13 @@ import Signup from "./Signup";
 import Home from "./Home";
 import GameContainer from "./GameContainer";
 import Navbar from "./Navbar";
+import Cart from "./Cart";
 
 function App() {
 
   const [products, setProducts] = useState([])
   const [search, setSearch] = useState("")
+  const [currentCart , setCurrentCart] = useState([])
 
   useEffect(() => {
     fetch("/products")
@@ -17,8 +19,17 @@ function App() {
       .then((data) => setProducts(data));
   }, []);
 
+  function addToCart(game){
+    setCurrentCart([...currentCart, game])
+  }
+
   function handleSearch(e) {
     setSearch(e.target.value)
+  }
+
+  function removeFromCart(removedGame){ 
+    const updatedCart = currentCart.filter(game => game.id !== removedGame.id )
+    setCurrentCart(updatedCart)
   }
 
   const searchedProducts = products.filter((product) =>
@@ -29,10 +40,11 @@ function App() {
     <>
     <Navbar/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Home setCurrentCart={setCurrentCart}/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/products" element={<GameContainer products={searchedProducts} search={search} handleSearch={handleSearch}/>}/>
+        <Route path="/cart" element={<Cart currentCart={currentCart}/>}/>
+        <Route path="/products" element={<GameContainer addToCart={addToCart} removeFromCart={removeFromCart} currentCart={currentCart} products={searchedProducts} search={search} handleSearch={handleSearch}/>}/>
       </Routes>
     </>
   );

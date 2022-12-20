@@ -27,6 +27,10 @@ function Navbar() {
         navigate("/")
       }
 
+    function navCart() {
+      navigate("/cart")
+    }
+
     function navGames() {
       navigate("/products")
     }
@@ -61,6 +65,7 @@ function Navbar() {
   <div class="ui container">
     <a onClick={navHome} class="active item">Home</a>
     <a onClick={navGames} class="item">Games</a>
+    <a onClick={navCart} class="item">Cart</a>
     {/* <a class="item">My List</a> */}
     {currentUser.admin ? <AddButton/> : null}
     {/* <a> <StripeCheckout token={onToken} stripeKey={process.env.REACT_APP_STRIPE_KEY}/></a> */}

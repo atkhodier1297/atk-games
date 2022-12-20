@@ -1,6 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
-function Home() {
+function Home({ setCurrentCart }) {
+
+    useEffect(() => {
+      fetch("/current-cart")
+      .then(r => r.json())
+      .then(cart => setCurrentCart(cart))
+    }, [])
+
   return (
     <>
     <br></br>
