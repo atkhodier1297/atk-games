@@ -1,10 +1,30 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
-function Games({ product, inCart, addToCart, removeFromCart }) {
+function Games({ product, currentCart, setCurrentCart }) {
 
-  const { name, description, price, img_url, rating, category } = product
+  const {id, name, description, price, img_url, rating, category } = product
 
-  const cartButton = inCart.includes(product)
+  // const cartButton = inCart.includes(product)
+
+  useEffect(() => {
+    fetch("/current-cart")
+    .then(r => r.json())
+    .then(cart => setCurrentCart(cart))
+  }, [])
+
+  function addToCart(){
+      fetch("/add-to-cart" , {
+        method : "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({product_id:id})
+      })
+      .then(r => r.json())
+      .then(addedProduct => setCurrentCart({...currentCart, cart_product: [...currentCart.cart_products, addedProduct]}))
+    }
+
+    console.log(currentCart)
 
   return (
     <>
@@ -32,10 +52,10 @@ function Games({ product, inCart, addToCart, removeFromCart }) {
       {price}.00
     </p>
   </div>
-  {cartButton ? <p onClick={() => removeFromCart(product)} class="ui orange button">Remove Cart</p> : 
   <p onClick={() => addToCart(product)} class="ui orange button">Add to Cart</p>
-  }
-  <p class="ui purple button">Add to My List</p>
+  {/* {cartButton ? <p onClick={() => removeFromCart(product)} class="ui orange button">Remove Cart</p> : 
+  <p onClick={() => addToCart(product)} class="ui orange button">Add to Cart</p>
+  } */}
 </div>
     </>
   )

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     def create
         user = User.create(user_params)
         if user.valid?
+            user.create_cart(total: 0)
             session[:user_id] = user.id
             session[:cart] = user.cart.id
             render json: user, status: :created

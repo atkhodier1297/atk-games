@@ -56,3 +56,5 @@ gem "hirb"
 gem "dotenv"
 
 gem "stripe"
+
+gem "byebug"

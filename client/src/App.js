@@ -19,22 +19,20 @@ function App() {
       .then((data) => setProducts(data));
   }, []);
 
-  function addToCart(game){
-    setCurrentCart([...currentCart, game])
-  }
-
   function handleSearch(e) {
     setSearch(e.target.value)
   }
 
-  function removeFromCart(removedGame){ 
-    const updatedCart = currentCart.filter(game => game.id !== removedGame.id )
-    setCurrentCart(updatedCart)
-  }
+  // function removeFromCart(removedGame){ 
+  //   const updatedCart = currentCart.filter(game => game.id !== removedGame.id )
+  //   setCurrentCart(updatedCart)
+  // }
 
-  const searchedProducts = products.filter((product) =>
+  const searchedProducts = products?.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   )
+
+  console.log(currentCart)
 
   return (
     <>
@@ -43,8 +41,8 @@ function App() {
         <Route path="/" element={<Home setCurrentCart={setCurrentCart}/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/cart" element={<Cart currentCart={currentCart}/>}/>
-        <Route path="/products" element={<GameContainer addToCart={addToCart} removeFromCart={removeFromCart} currentCart={currentCart} products={searchedProducts} search={search} handleSearch={handleSearch}/>}/>
+        <Route path="/current-cart" element={<Cart currentCart={currentCart}/>}/>
+        <Route path="/games" element={<GameContainer currentCart={currentCart} setCurrentCart={setCurrentCart} products={searchedProducts} search={search} handleSearch={handleSearch}/>}/>
       </Routes>
     </>
   );

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 
-function Home({ setCurrentCart }) {
+function Home({setCurrentCart}) {
 
     useEffect(() => {
       fetch("/current-cart")

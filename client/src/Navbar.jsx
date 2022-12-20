@@ -28,11 +28,11 @@ function Navbar() {
       }
 
     function navCart() {
-      navigate("/cart")
+      navigate("/current-cart")
     }
 
     function navGames() {
-      navigate("/products")
+      navigate("/games")
     }
 
   //   const onToken = (token) => {

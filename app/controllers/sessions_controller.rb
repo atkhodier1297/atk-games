@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:email])
         if user&.authenticate(params[:password])
             session[:user_id] = user.id
-            session[:cart] = user.cart.id
+            session[:cart_id] = user.cart.id
             render json: user, status: :created
         else
             render json: {error: "Invalid email or password"}, status: :unauthorized
