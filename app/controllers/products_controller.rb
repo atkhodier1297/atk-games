@@ -8,6 +8,11 @@ class ProductsController < ApplicationController
         product = Product.find(params[:id])
         render json: product, status: :ok
     end
+    
+    def product_reviews
+        product = Product.find(params[:id]).reviews
+        render json: product, status: :ok
+    end
 
     def create
         product = Product.create(

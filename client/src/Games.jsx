@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
+import ReviewContainer from './ReviewContainer'
 
 function Games({ product, currentCart, setCurrentCart }) {
 
@@ -70,6 +71,7 @@ function Games({ product, currentCart, setCurrentCart }) {
   {/* {cartButton ? <p onClick={() => removeFromCart(product)} class="ui orange button">Remove Cart</p> : 
   <p onClick={() => addToCart(product)} class="ui orange button">Add to Cart</p>
   }  */}
+  <ReviewContainer/>
 </div>
     </>
   )

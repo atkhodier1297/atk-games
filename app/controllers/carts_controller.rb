@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
 
-
    def index
       render json: Cart.all, status: :ok
    end
@@ -12,7 +11,7 @@ class CartsController < ApplicationController
 
    def current_cart
         cart = Cart.find(session[:cart])
-        render json: cart, serializer: ProductsInCartSerializer, status: :ok
+        render json: cart, serializer: CartProductSerializer, status: :ok
    end
 
    def destroy

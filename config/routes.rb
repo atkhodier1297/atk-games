@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post "/add-to-cart", to: "cart_products#create"
   delete "/remove-from-cart", to: "cart_products#destroy"
 
+  get "/product-reviews", to: "products#product_reviews"
 
   resources :users
   resources :reviews
