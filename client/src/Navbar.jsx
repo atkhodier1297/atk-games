@@ -14,7 +14,6 @@ function Navbar() {
 
     useEffect(() => {
       if (currentUserId) {
-        console.log(currentUserId)
         fetch(`/users/${currentUserId}`)
         .then(r => r.json())
         .then(user => {
@@ -28,7 +27,7 @@ function Navbar() {
       }
 
     function navCart() {
-      navigate("/current-cart")
+      navigate("/cart")
     }
 
     function navGames() {

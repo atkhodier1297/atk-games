@@ -4,7 +4,9 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:email])
         if user&.authenticate(params[:password])
             session[:user_id] = user.id
+            if (!session[:cart_id])
             session[:cart_id] = user.cart.id
+            end
             render json: user, status: :created
         else
             render json: {error: "Invalid email or password"}, status: :unauthorized
@@ -13,6 +15,8 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete :user_id
+        #session.delete :cart_id
+
         head :no_content
     end
 

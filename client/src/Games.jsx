@@ -1,10 +1,12 @@
 import React, {useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Games({ product, currentCart, setCurrentCart }) {
 
-  const {id, name, description, price, img_url, rating, category } = product
+  const {id, name, description, price, img_url, rating, category} = product
+  const navigate = useNavigate()
 
-  // const cartButton = inCart.includes(product)
+  //const cartButton = inCart.includes(products)
 
   useEffect(() => {
     fetch("/current-cart")
@@ -13,6 +15,7 @@ function Games({ product, currentCart, setCurrentCart }) {
   }, [])
 
   function addToCart(){
+    if (sessionStorage.getItem("user_id")) {
       fetch("/add-to-cart" , {
         method : "POST",
         headers: {
@@ -22,6 +25,16 @@ function Games({ product, currentCart, setCurrentCart }) {
       })
       .then(r => r.json())
       .then(addedProduct => setCurrentCart({...currentCart, cart_product: [...currentCart.cart_products, addedProduct]}))
+    }
+    else {
+      navigate("/login")
+    }
+  }
+
+    function removeFromCart(){
+      fetch("/remove-from-cart" , {
+        method : "DELETE",
+      })
     }
 
     console.log(currentCart)
@@ -53,9 +66,10 @@ function Games({ product, currentCart, setCurrentCart }) {
     </p>
   </div>
   <p onClick={() => addToCart(product)} class="ui orange button">Add to Cart</p>
+  <p onClick={() => removeFromCart(product)} class="ui purple button">Remove Cart</p>
   {/* {cartButton ? <p onClick={() => removeFromCart(product)} class="ui orange button">Remove Cart</p> : 
   <p onClick={() => addToCart(product)} class="ui orange button">Add to Cart</p>
-  } */}
+  }  */}
 </div>
     </>
   )

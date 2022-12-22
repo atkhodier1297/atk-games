@@ -21,9 +21,9 @@ function Home({setCurrentCart}) {
           <h1 class="ui header">Welcome to ATK Games!</h1>
           <p>Our mission is to provide customers with a fantastic experice buying video games! We have physical games for every console imaginable, and provide free two day shipping so you can start playing as fast as possible!</p>
           <h2 class="ui header">Browse our Collection</h2>
-          <p>Add games you wish to purchase to your cart and checkout, its that easy! We also provide you with a section called "My List" after you created an account that allows you to add your favorites to a wishlist!</p>
+          <p>Add games you wish to purchase to your cart and checkout, its that easy!</p>
           <h2 class="ui header">About Us</h2>
-          <p>Our founder created this web applicaion using the skills he learned from attending Flatiron School's software engineering program. </p>
+          <p>Our founder created this web app using the skills he learned from attending Flatiron School's software engineering program. </p>
           <div class="header">Adam Khodier</div>
           <div class="meta">Software Engineer/Gamer</div>
           <img
@@ -43,11 +43,11 @@ function Home({setCurrentCart}) {
         <div class="column">
         <h3>"Way better than buying games from Best Buy or Amazon."</h3>
           <p>
-            <b>Tom Cruise</b> Leader of the Church of Scientoligy
+            <b>Tom Cruise</b> Scientologist
           </p>
         </div>
         <div class="column">
-          <h3>"I love adding games to the wish list, great feature!"</h3>
+          <h3>"Can't believe they had a copy of DOOM for the Nintendo 64!"</h3>
           <p>
             <b>Joe Biden</b> President of the United States 
           </p>
