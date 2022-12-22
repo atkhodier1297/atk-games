@@ -46,7 +46,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/cart" element={<Cart currentCart={currentCart}/>}/>
+        <Route path="/cart" element={<Cart currentCart={currentCart} setCurrentCart={setCurrentCart}/>}/>
         <Route path="/games" element={<GameContainer currentCart={currentCart} setCurrentCart={setCurrentCart} 
         products={searchedProducts} search={search} handleSearch={handleSearch}/>}/>
       </Routes>

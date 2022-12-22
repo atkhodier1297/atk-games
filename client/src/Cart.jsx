@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
-function Cart({ currentCart }) {
+function Cart({ currentCart, setCurrentCart }) {
+
   const showCartProducts = currentCart.products?.map((item) => {
       return (
         <div class="ui cards">
@@ -16,6 +17,11 @@ function Cart({ currentCart }) {
       )
   })
 
+  useEffect(() => {
+    fetch("/current-cart")
+    .then(r => r.json())
+    .then(cart => setCurrentCart(cart))
+  }, [])
 
   return (
     <>
