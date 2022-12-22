@@ -2,14 +2,20 @@ import React from 'react'
 
 function Review({review}) {
 
-    const {description, rating} = review
+    const {user_id, description, rating} = review
 
   return (
-    <div className='review-section'>
-        <span>{description}</span>
-        <span>{rating}/5⭐️</span>
-
+    <div class="ui cards">
+  <div class="card">
+    <div class="content">
+      <p>{user_id}</p>
+      <i class="star icon">{rating}/5</i>
+      <div class="description">
+        {description}
+      </div>
     </div>
+  </div>
+</div>
   )
 }
 

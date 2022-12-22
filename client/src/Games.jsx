@@ -1,10 +1,11 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import ReviewContainer from './ReviewContainer'
 
 function Games({ product, currentCart, setCurrentCart }) {
 
   const {id, name, description, price, img_url, rating, category} = product
+  const [displayedReviews, setDisplayedReviews] = useState([])
   const navigate = useNavigate()
 
   //const cartButton = inCart.includes(products)
@@ -14,6 +15,12 @@ function Games({ product, currentCart, setCurrentCart }) {
     .then(r => r.json())
     .then(cart => setCurrentCart(cart))
   }, [])
+
+  useEffect(() => {
+    fetch(`/product-reviews/${id}`)
+      .then((r) => r.json())
+      .then((data) => setDisplayedReviews(data));
+  }, []);
 
   function addToCart(){
     if (sessionStorage.getItem("user_id")) {
@@ -25,7 +32,7 @@ function Games({ product, currentCart, setCurrentCart }) {
         body: JSON.stringify({product_id:id})
       })
       .then(r => r.json())
-      .then(addedProduct => setCurrentCart({...currentCart, cart_product: [...currentCart.cart_products, addedProduct]}))
+      .then(addedProduct => setCurrentCart({...currentCart, products: [...currentCart.products, addedProduct]}))
     }
     else {
       navigate("/login")
@@ -71,8 +78,8 @@ function Games({ product, currentCart, setCurrentCart }) {
   {/* {cartButton ? <p onClick={() => removeFromCart(product)} class="ui orange button">Remove Cart</p> : 
   <p onClick={() => addToCart(product)} class="ui orange button">Add to Cart</p>
   }  */}
-  <ReviewContainer/>
 </div>
+<ReviewContainer displayedReviews={displayedReviews}/>
     </>
   )
 }

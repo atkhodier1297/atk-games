@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:email])
         if user&.authenticate(params[:password])
             session[:user_id] = user.id
+            #session[:cart_id] = cart.id
             if (!session[:cart_id])
             session[:user_id] = user.id
             end

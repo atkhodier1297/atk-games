@@ -19,6 +19,12 @@ function App() {
       .then((data) => setProducts(data));
   }, []);
 
+  useEffect(() => {
+    fetch("/current-cart")
+    .then(r => r.json())
+    .then(cart => setCurrentCart(cart))
+  }, [])
+
   function handleSearch(e) {
     setSearch(e.target.value)
   }
@@ -37,7 +43,7 @@ function App() {
     <>
     <Navbar/>
       <Routes>
-        <Route path="/" element={<Home setCurrentCart={setCurrentCart}/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/cart" element={<Cart currentCart={currentCart}/>}/>

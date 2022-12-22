@@ -33,7 +33,10 @@ function Login() {
         .then(r => {
             if (r.ok) {
                 r.json()
-                .then(data => window.sessionStorage.setItem("user_id", data.id))
+                .then(data => {
+                  window.sessionStorage.setItem("user_id", data.id)
+                })
+        
                 .then(() => navigate("/games"))
             }
             else {

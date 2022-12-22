@@ -1,26 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Review from './Review';
 
-function ReviewContainer() {
-
-    const [displayedReviews, setDisplayedReviews] = useState([])
-
-    useEffect(() => {
-        fetch("/product-reviews")
-          .then((r) => r.json())
-          .then((data) => setDisplayedReviews(data));
-      }, []);
-
-      console.log(displayedReviews)
-
+function ReviewContainer({displayedReviews}) {
+  const eachReview = displayedReviews.map((review) => (
+    <Review review={review} key={review.id}/>
+  ))
   return (
     <ul>
-        {displayedReviews.map((review) => (
-            <Review
-            key={review.id}
-            review={review}
-            />
-        ))}
+      {eachReview}
     </ul>
   )
 }
