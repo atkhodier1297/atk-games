@@ -6,12 +6,14 @@ import Home from "./Home";
 import GameContainer from "./GameContainer";
 import Navbar from "./Navbar";
 import Cart from "./Cart";
+import AddProdForm from "./AddProdForm";
 
 function App() {
 
   const [products, setProducts] = useState([])
   const [search, setSearch] = useState("")
   const [currentCart , setCurrentCart] = useState([])
+  const [selectedProduct, setSelectedProduct] = useState("")
 
   useEffect(() => {
     fetch("/products")
@@ -29,6 +31,14 @@ function App() {
     setSearch(e.target.value)
   }
 
+  function postedProducts(addedProducts) {
+    setProducts([...products, addedProducts])
+  }
+
+  function removeProduct(id) {
+    const newProducts = products.filter((product) => product.id !== id);
+    setProducts(newProducts);
+  }
 
   // function removeFromCart(removedGame){ 
   //   const updatedCart = currentCart.filter(game => game.id !== removedGame.id )
@@ -39,15 +49,32 @@ function App() {
     product.name.toLowerCase().includes(search.toLowerCase())
   )
 
+  function handleEditForm(name, value) {
+    setSelectedProduct({
+      ...selectedProduct, [name]: value,
+    })
+  }
+
+  function handleEditDestination(updatedProduct) {
+    const updatedProducts = products.map((product) =>
+    product.id === updatedProduct.id ? updatedProduct : product
+    )
+    setSelectedProduct(updatedProduct)
+    setProducts(updatedProducts)
+  }
+
   return (
     <>
-    <Navbar/>
+    <Navbar postedProducts={postedProducts}/>
       <Routes>
+        <Route path="/add-product" element={<AddProdForm postedProduct={postedProducts}/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/cart" element={<Cart currentCart={currentCart} setCurrentCart={setCurrentCart}/>}/>
-        <Route path="/games" element={<GameContainer currentCart={currentCart} setCurrentCart={setCurrentCart} 
+        <Route path="/games" element={<GameContainer handleEditForm={handleEditForm} handleEditDestination={handleEditDestination}
+        selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
+        removeProduct={removeProduct} currentCart={currentCart} setCurrentCart={setCurrentCart} 
         products={searchedProducts} search={search} handleSearch={handleSearch}/>}/>
       </Routes>
     </>

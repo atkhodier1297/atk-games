@@ -54,21 +54,21 @@ function Navbar() {
   // }
 
   return (
-    <div class="ui medium top fixed hidden menu">
+    <div className="ui medium top fixed hidden menu">
        <img
               className="adam-pic"
-              src="https://cdn.discordapp.com/attachments/706587247197159578/1052392924761047122/Screenshot_2022-12-13_201326.png"
-              height={55}
+              src="https://cdn.discordapp.com/attachments/706587247197159578/1055649415123177532/Screenshot_2022-12-22_195335.png"
+              height={50}
               alt=""
             />
-  <div class="ui container">
-    <a onClick={navHome} class="active item">Home</a>
-    <a onClick={navGames} class="item">Games</a>
-    <a onClick={navCart} class="item">Cart</a>
-    {/* <a class="item">My List</a> */}
+  <div className="ui container">
+    <a onClick={navHome} className="item">Home</a>
+    <a onClick={navGames} className="item">Games</a>
+    <a onClick={navCart} className="item">Cart</a>
+    {/* <a className="item">My List</a> */}
     {currentUser.admin ? <AddButton/> : null}
     {/* <a> <StripeCheckout token={onToken} stripeKey={process.env.REACT_APP_STRIPE_KEY}/></a> */}
-    <div class="right menu">
+    <div className="right menu">
       {currentUserId ? null : <LoginButton/>}
       {currentUserId ? null : <SignupButton/>}
       {currentUserId ? <LogoutButton setCurrentUser={setCurrentUser}/> : null}

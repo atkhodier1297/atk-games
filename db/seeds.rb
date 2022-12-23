@@ -24,12 +24,21 @@ horizonForbiddenWest = Product.create(
     category: 'PS5 Game'
 )
 
-callOfDutyMw2 = Product.create(
-    name: 'Call of Duty Modern Warfare 2',
-    description: 'Call of Duty: Modern Warfare II drops players into an unprecedented global conflict that features the return of the iconic operators of Task Force 141.',
-    price: 60,
-    img_url: 'https://media.gamestop.com/i/gamestop/11206901-11206901?fmt=auto&$pdp-gallery$',
+stray = Product.create(
+    name: 'Stray',
+    description: 'Roam the streets, defend yourself against unforeseen threats, and uncover the secrets of a city filled with dangerous creatures.',
+    price: 70,
+    img_url: 'https://media.gamestop.com/i/gamestop/11207207/Stray?fmt=auto&$pdp-gallery$',
     rating: 4,
+    category: 'PS5 Game'
+)
+
+nba2k23 = Product.create(
+    name: 'NBA 2k23',
+    description: 'Redefine the game as you put together your dream team in MyTEAM and develop your skills on the court with authentic gameplay in this iconic basketball video game.',
+    price: 52,
+    img_url: 'https://media.gamestop.com/i/gamestop/11206859-11206849?fmt=auto&$pdp-gallery$',
+    rating: 2,
     category: 'PS5 Game'
 )
 
@@ -38,3 +47,4 @@ callOfDutyMw2 = Product.create(
 Review.create(description: 'Greatest game I have ever played, amazing!', rating: 5, user_id: 1, product_id: 1)
 Review.create(description: 'Really solid game, abit too much dialogue!', rating: 4, user_id: 1, product_id: 2)
 Review.create(description: 'Story got boring towards the end, but gameplay was solid!', rating: 3, user_id: 1, product_id: 3)
+Review.create(description: 'Worst basketball simulation ever, do not buy!', rating: 1, user_id: 1, product_id: 4)

@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:email])
         if user&.authenticate(params[:password])
             session[:user_id] = user.id
-            #session[:cart_id] = cart.id
+            session[:cart_id] = user.cart.id if user.cart
             if (!session[:cart_id])
-            session[:user_id] = user.id
+            session[:user_id] = user.id 
             end
             render json: user, status: :created
         else

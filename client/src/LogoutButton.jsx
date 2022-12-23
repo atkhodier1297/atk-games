@@ -12,8 +12,8 @@ function LogoutButton({ setCurrentUser }) {
       }
 
   return (
-    <div class="item">
-    <a onClick={navLogout} class="ui orange button">Log Out</a>
+    <div className="item">
+    <a onClick={navLogout} class="ui black button">Log Out</a>
   </div>
   )
 }

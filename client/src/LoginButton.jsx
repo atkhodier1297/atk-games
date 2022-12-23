@@ -11,8 +11,8 @@ function LoginButton() {
     }
 
   return (
-    <div class="item">
-        <a onClick={navLogin} class="ui orange button">Log in</a>
+    <div className="item">
+        <a onClick={navLogin} class="ui black button">Log in</a>
     </div> 
   )
 }

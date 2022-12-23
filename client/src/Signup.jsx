@@ -77,7 +77,7 @@ function Signup() {
         </div>
         <div 
         onClick={signupClick}
-        className ="ui fluid large orange submit button">Create Account</div>
+        className ="ui fluid large black submit button">Create Account</div>
       </div>
     </form>
     <h3 className="error">{errors}</h3>

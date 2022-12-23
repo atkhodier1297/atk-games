@@ -1,6 +1,11 @@
 body {
-    background-color: rgb(255, 120, 120);
+    background-color: rgb(136, 136, 136);
 }
 
-.cards {
+.reviews {
+    padding-right: 20px;
+}
+
+.trash-mouse {
+    cursor: pointer;
 }

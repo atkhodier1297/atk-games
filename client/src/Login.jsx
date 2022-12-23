@@ -44,7 +44,6 @@ function Login() {
             }
         })
     }
-
   return (
     <>
     <br></br>
@@ -75,11 +74,11 @@ function Login() {
         </div>
         <div 
         onClick={handleLogIn}
-        className ="ui fluid large orange submit button">Login</div>
+        className ="ui fluid large black submit button">Login</div>
       </div>
     </form>
     <div className ="ui message">
-      New to us? <button class="ui orange button" onClick={handleSignup}>Sign Up</button>
+      New to us? <button class="ui black button" onClick={handleSignup}>Sign Up</button>
     </div>
       <h3 className="error">{errors}</h3>
   </div>
