@@ -6,10 +6,10 @@ function CartTotal({currentCart}) {
     // )
     
   return (
-    <div>
+    <h3>
         Cart Total:
         <i className="dollar sign icon"></i>
-        {currentCart.total}.00</div>
+        {currentCart.total}.00</h3>
   )
 }
 

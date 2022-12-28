@@ -34,6 +34,10 @@ function Navbar() {
       navigate("/games")
     }
 
+    function navProfile() {
+      navigate("/profile")
+    }
+
   //   const onToken = (token) => {
 
   //     const charge = {
@@ -54,16 +58,17 @@ function Navbar() {
   // }
 
   return (
-    <div className="ui medium top fixed hidden menu">
-       <img
+    <div className="ui inverted segment">
+  <div className="ui inverted secondary menu">
+  <img
               className="adam-pic"
               src="https://cdn.discordapp.com/attachments/706587247197159578/1055649415123177532/Screenshot_2022-12-22_195335.png"
               height={50}
               alt=""
             />
-  <div className="ui container">
     <a onClick={navHome} className="item">Home</a>
     <a onClick={navGames} className="item">Games</a>
+    <a onClick={navProfile} className="item">Profile</a>
     <a onClick={navCart} className="item">Cart</a>
     {/* <a className="item">My List</a> */}
     {currentUser.admin ? <AddButton/> : null}

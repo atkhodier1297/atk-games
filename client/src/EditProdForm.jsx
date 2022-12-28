@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EditProdForm({handleEditForm, handleEditDestination, selectedProduct}) {
+function EditProdForm({handleEditForm, handleEditProduct, selectedProduct}) {
 
     function handleInputChange(e) {
         handleEditForm(e.target.name, e.target.value)
@@ -16,7 +16,7 @@ function EditProdForm({handleEditForm, handleEditDestination, selectedProduct}) 
             body: JSON.stringify(selectedProduct),
         })
         .then(r => r.json())
-        .then(handleEditDestination)
+        .then(handleEditProduct)
     }
     
     const {name, price, rating, description, img_url, category} = selectedProduct
@@ -75,7 +75,7 @@ function EditProdForm({handleEditForm, handleEditDestination, selectedProduct}) 
         onChange={handleInputChange}
         placeholder="Edit Category"
       ></input>
-      <button className="edit_destination_button" type="submit">
+      <button className="edit_product_button" type="submit">
         Update
       </button>
     </form>

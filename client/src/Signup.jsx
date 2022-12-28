@@ -35,7 +35,7 @@ function Signup() {
                 .then(() => navigate("/games"))
             }
             else {
-              setErrors("Missing fields, you must have an email, username, and password!")
+              setErrors("Missing fields, you must have an email with proper formatting, username, and password!")
 
             }
         })

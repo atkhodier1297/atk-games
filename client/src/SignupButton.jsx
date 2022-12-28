@@ -11,7 +11,7 @@ function SignupButton() {
 
   return (
     <div className="item">
-        <a onClick={navSignup} class="ui black button">Sign Up</a>
+        <a onClick={navSignup} class="ui red button">Sign Up</a>
       </div>
   )
 }

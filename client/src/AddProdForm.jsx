@@ -39,9 +39,6 @@ function AddProdForm({ postedProducts }) {
 
   return (
     <>
-    <br></br>
-    <br></br>
-    <br></br>
     <div>Add Products to our Inventory</div>
     <div className="products-form">
       <form className="form" onSubmit={handleSubmit}>

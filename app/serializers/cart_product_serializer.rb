@@ -1,5 +1,5 @@
 class CartProductSerializer < ActiveModel::Serializer
-  attributes :id, :total, :products
+  attributes :id, :user_id, :total, :products
   def product
     self.object.product
   end

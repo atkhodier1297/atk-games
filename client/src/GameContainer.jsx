@@ -1,13 +1,26 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Games from "./Games";
 import Search from './Search';
 import { Card } from 'semantic-ui-react'
 
 
-function GameContainer({ handleEditForm, handleEditDestination, 
+function GameContainer({ handleEditForm, handleEditProduct, 
   selectedProduct, setSelectedProduct,
   removeProduct, products, search, 
   handleSearch, inCart, currentCart, setCurrentCart}) {
+
+  const [currentUser, setCurrentUser] = useState({})
+  const currentUserId = sessionStorage.getItem("user_id")
+
+  useEffect(() => {
+    if (currentUserId) {
+      fetch(`/users/${currentUserId}`)
+      .then(r => r.json())
+      .then(user => {
+        setCurrentUser(user)
+      })
+    }
+  },[currentUserId])
 
   function handleDelete(id) {
     fetch(`products/${id}`, {
@@ -17,7 +30,7 @@ function GameContainer({ handleEditForm, handleEditDestination,
 
     const eachProduct = products.map((product) => (
       <Games selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
-      handleEditForm={handleEditForm} handleEditDestination={handleEditDestination} 
+      handleEditForm={handleEditForm} handleEditProduct={handleEditProduct} 
       handleDelete={handleDelete} currentCart={currentCart} 
       setCurrentCart={setCurrentCart} 
       inCart={inCart} product={product} key={product.id}/>
@@ -25,10 +38,7 @@ function GameContainer({ handleEditForm, handleEditDestination,
 
   return (
     <>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+    <h2>Welcome {currentUser.name}</h2>
     <Search search={search} handleSearch={handleSearch}/>
     <br></br>
     <Card.Group>{eachProduct}</Card.Group>

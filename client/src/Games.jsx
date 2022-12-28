@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import ReviewContainer from './ReviewContainer'
 import EditProdForm from './EditProdForm'
 
-function Games({ handleEditForm, handleEditDestination, 
+function Games({ handleEditForm, handleEditProduct, 
   selectedProduct, setSelectedProduct, handleDelete, 
   product, currentCart, setCurrentCart }) {
 
@@ -70,15 +70,19 @@ function Games({ handleEditForm, handleEditDestination,
 
   return (
     <>
-    <br></br>
     <div className="ui card">
   <div className="image">
     <img className='game-image' alt='game' src={img_url}/>
   </div>
   <div className="content">
-    <p className="header">{name}</p>
+    <p className="header">
+      {name}
+      </p>
     <div className="meta">
-      <span className="category">{category}</span>
+      <span className="category">{category}
+      <i onClick={() => addToCart(product)} className="shopping cart icon"></i>
+  <i onClick={() => removeFromCart(product)} className="trash icon"></i>
+      </span>
       <p>
       <i className="star icon"></i>
       {rating}/5 from ATK GAMES
@@ -94,15 +98,13 @@ function Games({ handleEditForm, handleEditDestination,
       {price}.00
     </p>
   </div>
- <button onClick={() => addToCart(product)} className="ui black button">Add to Cart</button>
-  <button onClick={() => removeFromCart(product)} className="ui grey button">Remove Cart</button>
   {currentUser.admin ? <button className="ui red button" onClick={() => handleDelete(id)}>Delete</button> : null }
   {currentUser.admin ? <button className="ui blue button" onClick={() => handleClick()}>Update</button> : null }
   {/* {cartButton ? <p onClick={() => removeFromCart(product)} className="ui orange button">Remove Cart</p> : 
   <p onClick={() => addToCart(product)} className="ui orange button">Add to Cart</p>
   }   */}
   {showForm ? <EditProdForm selectedProduct={selectedProduct} handleEditForm={handleEditForm} 
-  handleEditDestination={handleEditDestination}/> : null }
+  handleEditProduct={handleEditProduct}/> : null }
   <ReviewContainer displayedReviews={displayedReviews}/>
 </div>
     </>

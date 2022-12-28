@@ -49,8 +49,6 @@ function Cart({ currentCart, setCurrentCart }) {
 
   return (
     <>
-    <br></br>
-    <br></br>
     <h2>Cart Items</h2>
     <div>{showCartProducts}</div>
     <CartTotal currentCart={currentCart}/>

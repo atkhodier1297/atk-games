@@ -7,6 +7,7 @@ import GameContainer from "./GameContainer";
 import Navbar from "./Navbar";
 import Cart from "./Cart";
 import AddProdForm from "./AddProdForm";
+import Profile from "./Profile";
 
 function App() {
 
@@ -14,6 +15,19 @@ function App() {
   const [search, setSearch] = useState("")
   const [currentCart , setCurrentCart] = useState([])
   const [selectedProduct, setSelectedProduct] = useState("")
+
+  const [currentUser, setCurrentUser] = useState({})
+  const currentUserId = sessionStorage.getItem("user_id")
+
+  useEffect(() => {
+    if (currentUserId) {
+      fetch(`/users/${currentUserId}`)
+      .then(r => r.json())
+      .then(user => {
+        setCurrentUser(user)
+      })
+    }
+  },[currentUserId])
 
   useEffect(() => {
     fetch("/products")
@@ -55,7 +69,7 @@ function App() {
     })
   }
 
-  function handleEditDestination(updatedProduct) {
+  function handleEditProduct(updatedProduct) {
     const updatedProducts = products.map((product) =>
     product.id === updatedProduct.id ? updatedProduct : product
     )
@@ -69,10 +83,11 @@ function App() {
       <Routes>
         <Route path="/add-product" element={<AddProdForm postedProduct={postedProducts}/>}/>
         <Route path="/" element={<Home/>}/>
+        <Route path="/profile" element={<Profile/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/cart" element={<Cart currentCart={currentCart} setCurrentCart={setCurrentCart}/>}/>
-        <Route path="/games" element={<GameContainer handleEditForm={handleEditForm} handleEditDestination={handleEditDestination}
+        <Route path="/games" element={<GameContainer handleEditForm={handleEditForm} handleEditProduct={handleEditProduct}
         selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
         removeProduct={removeProduct} currentCart={currentCart} setCurrentCart={setCurrentCart} 
         products={searchedProducts} search={search} handleSearch={handleSearch}/>}/>

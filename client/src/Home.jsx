@@ -10,10 +10,6 @@ function Home() {
 
   return (
     <>
-    <br></br>
-    <br></br>
-    <br></br>
-    
     <div className="ui vertical stripe segment">
     <div className="ui middle aligned stackable grid container">
       <div className="row">
