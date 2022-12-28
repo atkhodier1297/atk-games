@@ -2,12 +2,6 @@ import React from 'react'
 
 function Home() {
 
-    // useEffect(() => {
-    //   fetch("/current-cart")
-    //   .then(r => r.json())
-    //   .then(cart => setCurrentCart(cart))
-    // }, [])
-
   return (
     <>
     <div className="ui vertical stripe segment">
