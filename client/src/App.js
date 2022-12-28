@@ -81,7 +81,7 @@ function App() {
     <>
     <Navbar postedProducts={postedProducts}/>
       <Routes>
-        <Route path="/add-product" element={<AddProdForm postedProduct={postedProducts}/>}/>
+        <Route path="/add-product" element={<AddProdForm postedProduct={postedProducts}  />}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/signup" element={<Signup/>}/>
