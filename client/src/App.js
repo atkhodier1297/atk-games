@@ -54,11 +54,6 @@ function App() {
     setProducts(newProducts);
   }
 
-  // function removeFromCart(removedGame){ 
-  //   const updatedCart = currentCart.filter(game => game.id !== removedGame.id )
-  //   setCurrentCart(updatedCart)
-  // }
-
   const searchedProducts = products?.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   )
