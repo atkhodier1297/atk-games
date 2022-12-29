@@ -58,6 +58,28 @@ function Home() {
   </div>
       </div>
     </div>
+    <div className="ui inverted vertical footer segment">
+    <div className="ui container">
+      <div className="ui stackable inverted divided equal height stackable grid">
+        <div className="three wide column">
+          <h4 className="ui inverted header">Links</h4>
+          <div className="ui inverted link list">
+            <a href="#" className="item">Github</a>
+            <a href="#" className="item">Linked In</a>
+            <a href="#" className="item">Medium Blog Posts</a>
+            <a href="#" className="item">Flatiron School</a>
+          </div>
+        </div>
+        <div className="seven wide column">
+          <h4 className="ui inverted header">About Me</h4>
+          <p>From Poly Sci to Full Stack Software Engineering. |JS| |React| |Ruby| |Rails|
+          Graduated Cum Laude from Kean University with a BA in Political Science. 
+          Recently became a Flatiron School Alumni, trying to become an impactful software engineer
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
    </>
   )
 }
