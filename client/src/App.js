@@ -8,7 +8,7 @@ import Navbar from "./Navbar";
 import Cart from "./Cart";
 import AddProdForm from "./AddProdForm";
 import Profile from "./Profile";
-import ThankYou from "./ThankYou";
+import PaymentComplete from "./PaymentComplete";
 
 function App() {
 
@@ -79,7 +79,7 @@ function App() {
       <Routes>
         <Route path="/add-product" element={<AddProdForm postedProduct={postedProducts}  />}/>
         <Route path="/" element={<Home/>}/>
-        <Route path="/payment-complete" element={<ThankYou/>}/>
+        <Route path="/payment-complete" element={<PaymentComplete currentUser={currentUser}/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>

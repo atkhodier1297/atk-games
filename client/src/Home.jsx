@@ -9,17 +9,16 @@ function Home() {
       <div className="row">
         <div className="eight wide column">
           <h1 className="ui header">Welcome to ATK Games!</h1>
-          <p>Our mission is to provide customers with a fantastic experice buying video games! We have physical games for every console imaginable, and provide free two day shipping so you can start playing as fast as possible!</p>
+          <h3>Our mission is to provide customers with a fantastic experice buying video games! We have physical games for every console imaginable, and provide free two day shipping so you can start playing as fast as possible!</h3>
           <h2 className="ui header">Browse our Collection</h2>
-          <p>Add games you wish to purchase to your cart and checkout, its that easy!</p>
+          <h3>Add games you wish to purchase to your cart and checkout, its that easy! ATK Games partnered with Stripe for a safe and secure checkout experience.</h3>
           <h2 className="ui header">About Us</h2>
-          <p>Our founder created this web app using the skills he learned from attending Flatiron School's software engineering program. </p>
-          <div className="header">Adam Khodier</div>
-          <div className="meta">Software Engineer/Gamer</div>
+          <h3>Our founder created this web app using the skills he learned from attending Flatiron School's software engineering program. </h3>
+          <h3 className="header">Adam Khodier- Software Engineer/Gamer</h3>
           <img
               className="adam-pic"
               src="https://ca.slack-edge.com/T02MD9XTF-U040NP41CSZ-ef8b80c53d03-512"
-              height={75}
+              height={60}
               alt="adam"
             />
         </div>
@@ -32,27 +31,27 @@ function Home() {
       <div className="center aligned row">
         <div className="column">
         <h3>"Way better than buying games from Best Buy or Amazon."</h3>
-          <p>
+          <h3>
             <b>Tom Cruise</b> Scientologist
-          </p>
+          </h3>
         </div>
         <div className="column">
           <h3>"Can't believe they had a copy of DOOM for the Nintendo 64!"</h3>
-          <p>
+          <h3>
             <b>Joe Biden</b> President of the United States 
-          </p>
+          </h3>
         </div>
         <div className="column">
           <h3>"Super easy to navigate, I love that there isin't a ton of ads!"</h3>
-          <p>
+          <h3>
             <b>Mr. Beast</b> Most Subscribed Youtuber 
-          </p>
+          </h3>
         </div>
         <div className="column">
           <h3>"I bought so many retro games from my childhood!"</h3>
-          <p>
+          <h3>
             <b>Eichiro Oda</b> Creator of One Piece 
-          </p>
+          </h3>
         </div>
       </div>
     </div>
