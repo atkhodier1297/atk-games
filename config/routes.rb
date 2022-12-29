@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/current-cart", to: "carts#current_cart"
   post "/add-to-cart", to: "cart_products#create"
   delete "/remove-from-cart", to: "cart_products#destroy"
+  delete "/remove-all-cart", to: "cart_products#remove_all_cart"
 
   get "/product-reviews/:id", to: "products#product_reviews"
 

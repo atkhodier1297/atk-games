@@ -14,8 +14,6 @@ function Games({ handleEditForm, handleEditProduct,
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate()
 
-  //const cartButton = inCart.includes(products)
-
   useEffect(() => {
     if (currentUserId) {
       fetch(`/users/${currentUserId}`)
@@ -61,7 +59,7 @@ function Games({ handleEditForm, handleEditProduct,
       })
     }
 
-    console.log(currentCart)
+    //console.log(currentCart)
 
     function handleClick() {
       setSelectedProduct(product)
@@ -80,8 +78,7 @@ function Games({ handleEditForm, handleEditProduct,
       </p>
     <div className="meta">
       <span className="category">{category}
-      <i onClick={() => addToCart(product)} className="shopping cart icon"></i>
-  <i onClick={() => removeFromCart(product)} className="trash icon"></i>
+     
       </span>
       <p>
       <i className="star icon"></i>
@@ -98,6 +95,8 @@ function Games({ handleEditForm, handleEditProduct,
       {price}.00
     </p>
   </div>
+  <button onClick={() => addToCart(product)} className="ui red button">Add to Cart</button>
+  <button onClick={() => removeFromCart(product)} className="ui blue button">Remove from Cart</button>
   {currentUser.admin ? <button className="ui red button" onClick={() => handleDelete(id)}>Delete</button> : null }
   {currentUser.admin ? <button className="ui blue button" onClick={() => handleClick()}>Update</button> : null }
   {/* {cartButton ? <p onClick={() => removeFromCart(product)} className="ui orange button">Remove Cart</p> : 

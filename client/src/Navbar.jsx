@@ -6,7 +6,7 @@ import LoginButton from './LoginButton'
 // import StripeCheckout from 'react-stripe-checkout';
 import AddButton from './AddButton'
 
-function Navbar() {
+function Navbar({currentCart}) {
  
     const navigate = useNavigate()
     const [currentUser, setCurrentUser] = useState({})
@@ -69,7 +69,7 @@ function Navbar() {
     <a onClick={navHome} className="item">Home</a>
     <a onClick={navGames} className="item">Games</a>
     <a onClick={navProfile} className="item">Profile</a>
-    <a onClick={navCart} className="item">Cart</a>
+    <a onClick={navCart} className="item">Cart {currentCart.products?.length}</a>
     {/* <a className="item">My List</a> */}
     {currentUser.admin ? <AddButton/> : null}
     {/* <a> <StripeCheckout token={onToken} stripeKey={process.env.REACT_APP_STRIPE_KEY}/></a> */}

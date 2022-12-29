@@ -23,6 +23,15 @@ class CartProductsController < ApplicationController
         head :no_content
     end
 
+    def remove_all_cart
+        cart_product = CartProduct.all
+        cart = Cart.find(session[:cart])
+        cart.total = 0
+        cart.save
+        cart_product.destroy_all
+        head :no_content
+    end
+
     private
 
     def cart_product_params

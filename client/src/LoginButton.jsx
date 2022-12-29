@@ -12,7 +12,7 @@ function LoginButton() {
 
   return (
     <div className="item">
-        <a onClick={navLogin} class="ui red button">Log in</a>
+        <a onClick={navLogin} className="ui red button">Log in</a>
     </div> 
   )
 }

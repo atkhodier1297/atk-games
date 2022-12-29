@@ -74,7 +74,7 @@ function App() {
 
   return (
     <>
-    <Navbar postedProducts={postedProducts}/>
+    <Navbar currentCart={currentCart} postedProducts={postedProducts}/>
       <Routes>
         <Route path="/add-product" element={<AddProdForm postedProduct={postedProducts}  />}/>
         <Route path="/" element={<Home/>}/>
