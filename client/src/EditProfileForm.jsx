@@ -73,10 +73,11 @@ function EditProfileForm() {
           value={formData.password}
           onChange={handleChange}
         ></input>
-        <button className="update-user" type="submit">
+      </form>
+      <br></br>
+      <button className="ui blue button" type="submit">
           Submit
         </button>
-      </form>
       </div>
       </>
   )
