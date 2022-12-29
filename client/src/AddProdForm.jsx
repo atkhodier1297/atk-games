@@ -39,8 +39,8 @@ function AddProdForm({ postedProducts }) {
 
   return (
     <>
-    <div>Add Products to our Inventory</div>
-    <div className="products-form">
+    <h2>Add Products to our Inventory</h2>
+    <div className="ui large form">
       <form className="form" onSubmit={handleSubmit}>
         <input
           className="name"
@@ -90,7 +90,7 @@ function AddProdForm({ postedProducts }) {
           value={formData.category}
           onChange={handleChange}
         ></input>
-        <button className="add-product" type="submit">
+        <button className="ui blue button" type="submit">
           Add Product
         </button>
       </form>

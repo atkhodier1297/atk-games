@@ -23,7 +23,7 @@ function EditProdForm({handleEditForm, handleEditProduct, selectedProduct}) {
 
   return (
     <div>
-    <div className="edit_destination">
+    <div className="ui small form">
     <form className="edit_form" 
     onSubmit={handleSubmit}
     >
@@ -75,7 +75,7 @@ function EditProdForm({handleEditForm, handleEditProduct, selectedProduct}) {
         onChange={handleInputChange}
         placeholder="Edit Category"
       ></input>
-      <button className="edit_product_button" type="submit">
+      <button className="ui purple button" type="submit">
         Update
       </button>
     </form>
