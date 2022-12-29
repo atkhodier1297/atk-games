@@ -62,12 +62,21 @@ function Home() {
     <div className="ui container">
       <div className="ui stackable inverted divided equal height stackable grid">
         <div className="three wide column">
-          <h4 className="ui inverted header">Links</h4>
+          <h4 className="ui inverted header"> My Links</h4>
           <div className="ui inverted link list">
-            <a href="#" className="item">Github</a>
-            <a href="#" className="item">Linked In</a>
-            <a href="#" className="item">Medium Blog Posts</a>
-            <a href="#" className="item">Flatiron School</a>
+            <a href="https://github.com/atkhodier1297" className="item">Github</a>
+            <a href="https://www.linkedin.com/in/adam-khodier/" className="item">Linked In</a>
+            <a href="https://medium.com/@khodieradam1297" className="item">Medium Blog Posts</a>
+            <a href="https://flatironschool.com/" className="item">Flatiron School</a>
+          </div>
+        </div>
+        <div className="three wide column">
+          <h4 className="ui inverted header">Resources</h4>
+          <div className="ui inverted link list">
+            <a href="https://semantic-ui.com/introduction/getting-started.html" className="item">Sematic UI</a>
+            <a href="https://stripe.com/docs/" className="item">Stripe Docs</a>
+            <a href="https://reactjs.org/docs/getting-started.html" className="item">React Docs</a>
+            <a href="https://guides.rubyonrails.org/" className="item">Rails Docs</a>
           </div>
         </div>
         <div className="seven wide column">
