@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get "/product-reviews/:id", to: "products#product_reviews"
 
+  post "/create-payment-intent", to: "charge#create"
+
   resources :users
   resources :reviews
   resources :products

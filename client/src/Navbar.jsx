@@ -69,7 +69,7 @@ function Navbar({currentCart}) {
     <a onClick={navHome} className="item">Home</a>
     <a onClick={navGames} className="item">Games</a>
     <a onClick={navProfile} className="item">Profile</a>
-    <a onClick={navCart} className="item">Cart {currentCart.products?.length}</a>
+    <a onClick={navCart} className="item">Cart ({currentCart.products?.length})</a>
     {/* <a className="item">My List</a> */}
     {currentUser.admin ? <AddButton/> : null}
     {/* <a> <StripeCheckout token={onToken} stripeKey={process.env.REACT_APP_STRIPE_KEY}/></a> */}

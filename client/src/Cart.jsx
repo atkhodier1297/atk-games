@@ -1,7 +1,28 @@
-import React, {useEffect} from 'react'
-// import CartTotal from './CartTotal'
+import React, {useState, useEffect} from 'react'
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from "@stripe/react-stripe-js";
+import PaymentForm from './PaymentForm';
+
+const PUBLIC_KEY = process.env.REACT_APP_STRIPE_KEY
+const stripePromise = loadStripe(PUBLIC_KEY)
 
 function Cart({ currentCart, setCurrentCart }) {
+
+  const [clientSecret, setClientSecret] = useState("")
+
+  function handleClick(){
+    fetch('create-payment-intent', {
+      method: "POST",
+      headers: { "Content-Type": "application/json"},
+      body: JSON.stringify({amount: currentCart.total})
+    })
+    .then(resp => resp.json())
+    .then((data) => {
+      setClientSecret(data.clientSecret)
+      // goToPaymentForm()
+    })
+  }
+
 
   useEffect(() => {
     fetch("/current-cart")
@@ -29,6 +50,10 @@ function Cart({ currentCart, setCurrentCart }) {
   function reloadAllCart(){
     removeAllCart()
     window.location.reload()
+  }
+
+  const options = {
+    clientSecret
   }
 
   
@@ -68,9 +93,17 @@ function Cart({ currentCart, setCurrentCart }) {
     <h3>
         Cart Total:
         <i className="dollar sign icon"></i>
-        {currentCart.total}.00</h3>
-        <a onClick={() => reloadAllCart()} className="ui red button">Empty Cart</a>
-    {/* <CartTotal currentCart={currentCart}/> */}
+        {currentCart.total}.00
+    </h3>
+    <a onClick={() => reloadAllCart()} className="ui red button">Empty Cart</a>
+    <button onClick={handleClick} className="ui blue button">Checkout</button>
+    <div>
+        {clientSecret && (
+          <Elements options={options} stripe={stripePromise}>
+            <PaymentForm removeAllCart={removeAllCart}/>
+          </Elements>
+        )}
+      </div>
     
     </>
   )

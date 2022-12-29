@@ -59,8 +59,6 @@ function Games({ handleEditForm, handleEditProduct,
       })
     }
 
-    //console.log(currentCart)
-
     function handleClick() {
       setSelectedProduct(product)
       setShowForm(!showForm)
