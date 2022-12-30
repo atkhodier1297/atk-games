@@ -2,11 +2,12 @@ import React from 'react'
 
 function Review({review}) {
 
-    const {description, rating} = review
+    const {user, description, rating} = review
 
   return (
     <>
       <div className="reviews">
+      <div>{user?.name}</div>
       <div>{description}</div>
       <div>
       <i className="star icon"></i>

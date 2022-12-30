@@ -14,6 +14,8 @@ class ProductsController < ApplicationController
         render json: product, status: :ok
     end
 
+
+
     def create
         product = Product.create(
             name: product_params[:name],

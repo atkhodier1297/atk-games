@@ -68,8 +68,9 @@ function PaymentForm({removeAllCart}) {
         setIsLoading(false)
     }
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
+    <form className="ui large form" id="payment-form" onSubmit={handleSubmit}>
 			<PaymentElement id="payment-element" />
+            <br></br>
 			<button onClick={clearCartThankYou()} className="ui blue button" disabled={isLoading || !stripe || !elements} id="submit">
 				<span id="button-text">
 					{isLoading ? <div className="spinner" id="spinner"></div> : "Pay Now"}

@@ -5,6 +5,7 @@ Review.destroy_all
 Product.destroy_all
 
 User.create(name: 'atkhodier', password: 'naruto', email: 'atkhodier@gmail.com', admin: true)
+User.create(name: 'antonioreid', password: 'antonioreid', email: 'antonioreid@gmail.com', admin: false)
 
 godOfWarRagnarok = Product.create(
     name: 'God of War Ragnarok',
@@ -42,9 +43,18 @@ nba2k23 = Product.create(
     category: 'PS5 Game'
 )
 
+sonicFrontiers = Product.create(
+    name: 'Sonic Frontiers',
+    description: 'Join Sonic on his latest adventure in Sonic Frontiers. Sprint through a vast open zone using Sonic’s super speed, attack enemies head on, and gain new skills to boost Sonic’s range of moves.',
+    price: 65,
+    img_url: 'https://media.gamestop.com/i/gamestop/20000861-680826cd?fmt=auto&$pdp-gallery$',
+    rating: 5,
+    category: 'PS5 Game'
+)
 
 
 Review.create(description: 'Greatest game I have ever played, amazing!', rating: 5, user_id: 1, product_id: 1)
 Review.create(description: 'Really solid game, abit too much dialogue!', rating: 4, user_id: 1, product_id: 2)
 Review.create(description: 'Story got boring towards the end, but gameplay was solid!', rating: 3, user_id: 1, product_id: 3)
-Review.create(description: 'Worst basketball simulation ever, do not buy!', rating: 1, user_id: 1, product_id: 4)
+Review.create(description: 'Worst basketball simulation ever, do not buy!', rating: 1, user_id: 2, product_id: 4)
+Review.create(description: 'Man I love that sonic is back and better than ever!', rating: 5, user_id: 2, product_id: 5)
