@@ -91,7 +91,7 @@ function AddProdForm({ postedProducts }) {
           onChange={handleChange}
         ></input>
       </form>
-      <button className="ui blue button" type="submit">
+      <button onClick={() => console.log("I was clicked")} className="ui blue button" type="submit">
           Add Product
         </button>
       </div>

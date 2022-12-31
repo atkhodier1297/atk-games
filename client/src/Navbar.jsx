@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import LogoutButton from './LogoutButton'
 import SignupButton from './SignupButton'
 import LoginButton from './LoginButton'
-// import StripeCheckout from 'react-stripe-checkout';
 import AddButton from './AddButton'
 
 function Navbar({currentCart}) {
