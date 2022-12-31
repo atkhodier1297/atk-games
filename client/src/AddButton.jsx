@@ -8,7 +8,7 @@ function AddButton() {
   function navAddProd() {
     navigate("/add-product")
   }
-
+  
   return (
     <>
     <a onClick={navAddProd} className="item">Add Game</a>
