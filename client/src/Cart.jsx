@@ -19,7 +19,6 @@ function Cart({ currentCart, setCurrentCart }) {
     .then(resp => resp.json())
     .then((data) => {
       setClientSecret(data.clientSecret)
-      // goToPaymentForm()
     })
   }
 
