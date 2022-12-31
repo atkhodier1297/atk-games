@@ -25,8 +25,7 @@ function EditProdForm({handleEditForm, handleEditProduct, selectedProduct}) {
     <div>
     <div className="ui small form">
     <form className="edit_form" 
-    onSubmit={handleSubmit}
-    >
+    onSubmit={handleSubmit}>
       <input
         className="edit-name"
         type="text"

@@ -80,11 +80,11 @@ function App() {
         <Route path="/add-product" element={<AddProdForm postedProduct={postedProducts}  />}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/payment-complete" element={<PaymentComplete currentUser={currentUser}/>}/>
-        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/profile" element={<Profile currentUser={currentUser} currentUserId={currentUserId}/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/cart" element={<Cart currentCart={currentCart} setCurrentCart={setCurrentCart}/>}/>
-        <Route path="/games" element={<GameContainer handleEditForm={handleEditForm} handleEditProduct={handleEditProduct}
+        <Route path="/games" element={<GameContainer currentUser={currentUser} currentUserId={currentUserId} handleEditForm={handleEditForm} handleEditProduct={handleEditProduct}
         selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
         removeProduct={removeProduct} currentCart={currentCart} setCurrentCart={setCurrentCart} 
         products={searchedProducts} search={search} handleSearch={handleSearch}/>}/>

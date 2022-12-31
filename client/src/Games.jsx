@@ -3,26 +3,15 @@ import { useNavigate } from 'react-router-dom'
 import ReviewContainer from './ReviewContainer'
 import EditProdForm from './EditProdForm'
 
-function Games({ handleEditForm, handleEditProduct, 
+function Games({ currentUser, handleEditForm, handleEditProduct, 
   selectedProduct, setSelectedProduct, handleDelete, 
   product, currentCart, setCurrentCart }) {
 
   const {id, name, description, price, img_url, rating, category} = product
-  const [currentUser, setCurrentUser] = useState({})
-  const currentUserId = sessionStorage.getItem("user_id")
   const [displayedReviews, setDisplayedReviews] = useState([])
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate()
 
-  useEffect(() => {
-    if (currentUserId) {
-      fetch(`/users/${currentUserId}`)
-      .then(r => r.json())
-      .then(user => {
-        setCurrentUser(user)
-      })
-    }
-  },[currentUserId])
 
   useEffect(() => {
     fetch("/current-cart")
@@ -97,9 +86,6 @@ function Games({ handleEditForm, handleEditProduct,
   <button onClick={() => removeFromCart(product)} className="ui blue button">Remove from Cart</button>
   {currentUser.admin ? <button className="ui red button" onClick={() => handleDelete(id)}>Delete</button> : null }
   {currentUser.admin ? <button className="ui blue button" onClick={() => handleClick()}>Update</button> : null }
-  {/* {cartButton ? <p onClick={() => removeFromCart(product)} className="ui orange button">Remove Cart</p> : 
-  <p onClick={() => addToCart(product)} className="ui orange button">Add to Cart</p>
-  }   */}
   {showForm ? <EditProdForm selectedProduct={selectedProduct} handleEditForm={handleEditForm} 
   handleEditProduct={handleEditProduct}/> : null }
   <ReviewContainer displayedReviews={displayedReviews}/>

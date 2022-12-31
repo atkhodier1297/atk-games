@@ -41,7 +41,7 @@ function Navbar({currentCart}) {
     <div className="ui inverted segment">
   <div className="ui inverted secondary menu">
   <img
-              className="adam-pic"
+              className="banner"
               src="https://cdn.discordapp.com/attachments/706587247197159578/1055649415123177532/Screenshot_2022-12-22_195335.png"
               height={50}
               alt=""

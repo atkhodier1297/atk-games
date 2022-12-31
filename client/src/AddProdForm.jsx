@@ -39,7 +39,7 @@ function AddProdForm({ postedProducts }) {
 
   return (
     <>
-    <h2>Add Products to our Inventory</h2>
+    <h2>Add Products</h2>
     <div className="ui large form">
       <form className="form" onSubmit={handleSubmit}>
         <input
@@ -50,6 +50,8 @@ function AddProdForm({ postedProducts }) {
           value={formData.name}
           onChange={handleChange}
         ></input>
+         <br></br>
+        <br></br>
         <input
           className="description"
           type="text"
@@ -58,6 +60,8 @@ function AddProdForm({ postedProducts }) {
           value={formData.description}
           onChange={handleChange}
         ></input>
+         <br></br>
+        <br></br>
          <input
           className="price"
           type="text"
@@ -66,6 +70,8 @@ function AddProdForm({ postedProducts }) {
           value={formData.price}
           onChange={handleChange}
         ></input>
+         <br></br>
+        <br></br>
          <input
           className="img_url"
           type="text"
@@ -74,6 +80,8 @@ function AddProdForm({ postedProducts }) {
           value={formData.img_url}
           onChange={handleChange}
         ></input>
+         <br></br>
+        <br></br>
          <input
           className="rating"
           type="text"
@@ -82,6 +90,8 @@ function AddProdForm({ postedProducts }) {
           value={formData.rating}
           onChange={handleChange}
         ></input>
+         <br></br>
+        <br></br>
          <input
           className="category"
           type="text"
@@ -90,6 +100,8 @@ function AddProdForm({ postedProducts }) {
           value={formData.category}
           onChange={handleChange}
         ></input>
+        <br></br>
+        <br></br>
          <button onClick={() => console.log("I was clicked")} className="ui blue button" type="submit">
           Add Product
         </button>

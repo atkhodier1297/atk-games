@@ -4,23 +4,11 @@ import Search from './Search';
 import { Card } from 'semantic-ui-react'
 
 
-function GameContainer({ handleEditForm, handleEditProduct, 
+function GameContainer({ currentUser, currentUserId, handleEditForm, handleEditProduct, 
   selectedProduct, setSelectedProduct,
   removeProduct, products, search, 
   handleSearch, inCart, currentCart, setCurrentCart}) {
 
-  const [currentUser, setCurrentUser] = useState({})
-  const currentUserId = sessionStorage.getItem("user_id")
-
-  useEffect(() => {
-    if (currentUserId) {
-      fetch(`/users/${currentUserId}`)
-      .then(r => r.json())
-      .then(user => {
-        setCurrentUser(user)
-      })
-    }
-  },[currentUserId])
 
   function handleDelete(id) {
     fetch(`products/${id}`, {
@@ -29,7 +17,7 @@ function GameContainer({ handleEditForm, handleEditProduct,
   }
 
     const eachProduct = products.map((product) => (
-      <Games selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
+      <Games currentUser={currentUser} currentUserId={currentUserId} selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
       handleEditForm={handleEditForm} handleEditProduct={handleEditProduct} 
       handleDelete={handleDelete} currentCart={currentCart} 
       setCurrentCart={setCurrentCart} 

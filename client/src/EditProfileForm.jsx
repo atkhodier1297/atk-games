@@ -47,7 +47,7 @@ function EditProfileForm() {
 
   return (
     <>
-    <div className="products-form">
+    <div className="ui large form">
       <form className="form" onSubmit={handleSubmit}>
         <input
           className="name"
@@ -57,6 +57,8 @@ function EditProfileForm() {
           value={formData.name}
           onChange={handleChange}
         ></input>
+        <br></br>
+        <br></br>
         <input
           className="email"
           type="text"
@@ -65,6 +67,8 @@ function EditProfileForm() {
           value={formData.email}
           onChange={handleChange}
         ></input>
+           <br></br>
+        <br></br>
          <input
           className="password"
           type="text"
@@ -73,6 +77,8 @@ function EditProfileForm() {
           value={formData.password}
           onChange={handleChange}
         ></input>
+        <br></br>
+        <br></br>
           <button className="ui blue button" type="submit">
           Submit
         </button>
