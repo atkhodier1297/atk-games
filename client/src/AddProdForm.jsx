@@ -91,7 +91,6 @@ function AddProdForm({ postedProducts }) {
           onChange={handleChange}
         ></input>
       </form>
-      <br></br>
       <button className="ui blue button" type="submit">
           Add Product
         </button>

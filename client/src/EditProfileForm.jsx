@@ -74,7 +74,6 @@ function EditProfileForm() {
           onChange={handleChange}
         ></input>
       </form>
-      <br></br>
       <button className="ui blue button" type="submit">
           Submit
         </button>
