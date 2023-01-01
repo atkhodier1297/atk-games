@@ -1,11 +1,14 @@
 puts 'Destroying seeds...'
 
 User.destroy_all
-Review.destroy_all
+Cart.destroy_all
 Product.destroy_all
+Review.destroy_all
 
 User.create(name: 'atkhodier', password: 'naruto', email: 'atkhodier@gmail.com', admin: true)
 User.create(name: 'antonioreid', password: 'antonioreid', email: 'antonioreid@gmail.com', admin: false)
+
+cartOne = Cart.create(user_id: 2, total: 0)
 
 godOfWarRagnarok = Product.create(
     name: 'God of War Ragnarok',
