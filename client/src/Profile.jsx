@@ -1,9 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import EditProfileForm from './EditProfileForm'
 
 function Profile({currentUser, currentUserId}) {
-
- 
 
   return (
     <>

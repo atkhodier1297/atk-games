@@ -9,14 +9,13 @@ class ReviewsController < ApplicationController
         render json: review, status: :ok
     end
 
-    def create
-        review = Review.create(
-            description: product_params[:description],
+    def add_reviews
+        review = Review.create!(
+            description: review_params[:description],
             rating: review_params[:rating],
             user_id: review_params[:user_id],
             product_id: review_params[:product_id]
         )
-        review.save
         render json: review, status: :created
     end
 

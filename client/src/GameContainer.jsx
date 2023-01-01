@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Games from "./Games";
 import Search from './Search';
 import { Card } from 'semantic-ui-react'
 
 
-function GameContainer({ currentUser, currentUserId, handleEditForm, handleEditProduct, 
+function GameContainer({ postedReviews, currentUser, currentUserId, handleEditForm, handleEditProduct, 
   selectedProduct, setSelectedProduct,
   removeProduct, products, search, 
   handleSearch, inCart, currentCart, setCurrentCart}) {
@@ -17,7 +17,7 @@ function GameContainer({ currentUser, currentUserId, handleEditForm, handleEditP
   }
 
     const eachProduct = products.map((product) => (
-      <Games currentUser={currentUser} currentUserId={currentUserId} selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
+      <Games postedReviews={postedReviews} currentUser={currentUser} currentUserId={currentUserId} selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
       handleEditForm={handleEditForm} handleEditProduct={handleEditProduct} 
       handleDelete={handleDelete} currentCart={currentCart} 
       setCurrentCart={setCurrentCart} 

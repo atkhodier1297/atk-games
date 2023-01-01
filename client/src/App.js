@@ -16,6 +16,7 @@ function App() {
   const [search, setSearch] = useState("")
   const [currentCart , setCurrentCart] = useState([])
   const [selectedProduct, setSelectedProduct] = useState("")
+  const [reviews, setReviews] = useState("")
 
   const [currentUser, setCurrentUser] = useState({})
   const currentUserId = sessionStorage.getItem("user_id")
@@ -49,6 +50,11 @@ function App() {
   function postedProducts(addedProducts) {
     setProducts([...products, addedProducts])
   }
+
+  function postedReviews(addedReviews) {
+    setReviews([...reviews, addedReviews])
+  }
+
 
   function removeProduct(id) {
     const newProducts = products.filter((product) => product.id !== id);
@@ -84,7 +90,7 @@ function App() {
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/cart" element={<Cart currentCart={currentCart} setCurrentCart={setCurrentCart}/>}/>
-        <Route path="/games" element={<GameContainer currentUser={currentUser} currentUserId={currentUserId} handleEditForm={handleEditForm} handleEditProduct={handleEditProduct}
+        <Route path="/games" element={<GameContainer postedReviews={postedReviews} currentUser={currentUser} currentUserId={currentUserId} handleEditForm={handleEditForm} handleEditProduct={handleEditProduct}
         selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
         removeProduct={removeProduct} currentCart={currentCart} setCurrentCart={setCurrentCart} 
         products={searchedProducts} search={search} handleSearch={handleSearch}/>}/>

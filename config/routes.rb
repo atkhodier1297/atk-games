@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete "/remove-all-cart", to: "cart_products#remove_all_cart"
 
   get "/product-reviews/:id", to: "products#product_reviews"
+  post "/add-reviews/:id", to: "reviews#add_reviews"
 
   post "/create-payment-intent", to: "charge#create"
 

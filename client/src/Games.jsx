@@ -2,16 +2,17 @@ import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import ReviewContainer from './ReviewContainer'
 import EditProdForm from './EditProdForm'
+import AddReviewForm from './AddReviewForm'
 
-function Games({ currentUser, handleEditForm, handleEditProduct, 
+function Games({ postedReviews, currentUser, currentUserId, handleEditForm, handleEditProduct, 
   selectedProduct, setSelectedProduct, handleDelete, 
   product, currentCart, setCurrentCart }) {
 
   const {id, name, description, price, img_url, rating, category} = product
   const [displayedReviews, setDisplayedReviews] = useState([])
   const [showForm, setShowForm] = useState(false);
+  const [showReview, setShowReview] = useState(false)
   const navigate = useNavigate()
-
 
   useEffect(() => {
     fetch("/current-cart")
@@ -53,6 +54,11 @@ function Games({ currentUser, handleEditForm, handleEditProduct,
       setShowForm(!showForm)
     }
 
+    function handleReviewClick() {
+      setShowReview(!showReview)
+    }
+    
+
   return (
     <>
     <div className="ui card">
@@ -84,10 +90,12 @@ function Games({ currentUser, handleEditForm, handleEditProduct,
   </div>
   <button onClick={() => addToCart(product)} className="ui red button">Add to Cart</button>
   <button onClick={() => removeFromCart(product)} className="ui blue button">Remove from Cart</button>
+  {currentUserId ? <button className="ui orange button" onClick={() => handleReviewClick()}>Add Review</button> : null }
   {currentUser.admin ? <button className="ui red button" onClick={() => handleDelete(id)}>Delete</button> : null }
   {currentUser.admin ? <button className="ui blue button" onClick={() => handleClick()}>Update</button> : null }
   {showForm ? <EditProdForm selectedProduct={selectedProduct} handleEditForm={handleEditForm} 
   handleEditProduct={handleEditProduct}/> : null }
+  {showReview ? <AddReviewForm currentUserId={currentUserId} id={id} postedReviews={postedReviews}/> : null }
   <ReviewContainer displayedReviews={displayedReviews}/>
 </div>
     </>

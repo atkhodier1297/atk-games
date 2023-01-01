@@ -21,8 +21,7 @@ function Cart({ currentCart, setCurrentCart }) {
       setClientSecret(data.clientSecret)
     })
   }
-
-
+  
   useEffect(() => {
     fetch("/current-cart")
     .then(r => r.json())

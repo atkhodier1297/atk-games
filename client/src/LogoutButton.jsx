@@ -9,6 +9,7 @@ function LogoutButton({ setCurrentUser }) {
         setCurrentUser({})
         sessionStorage.clear()
         navigate("/")
+        window.location.reload()
       }
 
   return (
