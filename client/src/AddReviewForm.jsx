@@ -54,7 +54,7 @@ function AddReviewForm({currentUserId, id, postedReviews}) {
             <br></br>
             <br></br>
              <button onClick={() => console.log("I was clicked")} className="ui blue button" type="submit">
-              Post
+              Post Review
             </button>
           </form>
           </div>

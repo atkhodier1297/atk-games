@@ -26,8 +26,13 @@ function GameContainer({ postedReviews, currentUser, currentUserId, handleEditFo
 
   return (
     <>
-    <h2>Welcome {currentUser.name}</h2>
+     <div className="header-title">
+    <h1 id="fonts">Hello {currentUser.name}</h1>
+    </div>
+    <br></br>
+    <br></br>
     <Search search={search} handleSearch={handleSearch}/>
+    <br></br>
     <br></br>
     <Card.Group>{eachProduct}</Card.Group>
     

@@ -54,7 +54,7 @@ function Login() {
     <div className ="ui middle aligned center aligned grid">
   <div className ="column">
     <h2 className ="ui black image header">
-      <div className ="content">
+      <div id="fonts" className ="content">
         Log-in to your account
       </div>
     </h2>
@@ -72,13 +72,13 @@ function Login() {
             <input onChange={(e) => setPassword(e.target.value)} type="password" name="password" placeholder="Password"/>
           </div>
         </div>
-        <div 
+        <div id="fonts"
         onClick={handleLogIn}
         className ="ui fluid large black submit button">Login</div>
       </div>
     </form>
-    <div className ="ui message">
-      New to us? <button class="ui black button" onClick={handleSignup}>Sign Up</button>
+    <div id="fonts" className="ui message">
+      New to us? <button id="fonts" class="ui black button" onClick={handleSignup}>Sign Up</button>
     </div>
       <h3 className="error">{errors}</h3>
   </div>

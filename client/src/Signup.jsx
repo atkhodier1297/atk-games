@@ -51,7 +51,7 @@ function Signup() {
     <div className ="ui middle aligned center aligned grid">
   <div className ="column">
     <h2 className ="ui black image header">
-      <div className ="content">
+      <div id="fonts" className ="content">
         Create your account
       </div>
     </h2>
@@ -75,7 +75,7 @@ function Signup() {
             <input onChange={(e) => setUserPassword(e.target.value)} type="password" name="password" placeholder="Password"/>
           </div>
         </div>
-        <div 
+        <div id="fonts"
         onClick={signupClick}
         className ="ui fluid large black submit button">Create Account</div>
       </div>

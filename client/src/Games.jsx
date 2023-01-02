@@ -13,6 +13,13 @@ function Games({ postedReviews, currentUser, currentUserId, handleEditForm, hand
   const [showForm, setShowForm] = useState(false);
   const [showReview, setShowReview] = useState(false)
   const navigate = useNavigate()
+  // const [showReviewDelete, setShowReviewDelete] = useState(false)
+
+  // function showDelete(){
+  //   if (currentUserId === postedReviews.id) {
+  //     setShowReviewDelete(!showReviewDelete)
+  //   }
+  // }
 
   useEffect(() => {
     fetch("/current-cart")
@@ -88,15 +95,16 @@ function Games({ postedReviews, currentUser, currentUserId, handleEditForm, hand
       {price}.00
     </p>
   </div>
-  <button onClick={() => addToCart(product)} className="ui red button">Add to Cart</button>
-  <button onClick={() => removeFromCart(product)} className="ui blue button">Remove from Cart</button>
-  {currentUserId ? <button className="ui orange button" onClick={() => handleReviewClick()}>Add Review</button> : null }
-  {currentUser.admin ? <button className="ui red button" onClick={() => handleDelete(id)}>Delete</button> : null }
-  {currentUser.admin ? <button className="ui blue button" onClick={() => handleClick()}>Update</button> : null }
+  <button id="fonts" onClick={() => addToCart(product)} className="ui red button">Add to Cart</button>
+  <button id="fonts" onClick={() => removeFromCart(product)} className="ui blue button">Remove from Cart</button>
+  {currentUserId ? <button id="fonts" className="ui orange button" onClick={() => handleReviewClick()}>Add Review</button> : null }
+  {currentUser.admin ? <button id="fonts" className="ui red button" onClick={() => handleDelete(id)}>Delete</button> : null }
+  {currentUser.admin ? <button id="fonts" className="ui blue button" onClick={() => handleClick()}>Update</button> : null }
+  {/* {showDelete() ? <button id="fonts" className="ui blue button">Delete</button> : null } */}
   {showForm ? <EditProdForm selectedProduct={selectedProduct} handleEditForm={handleEditForm} 
   handleEditProduct={handleEditProduct}/> : null }
   {showReview ? <AddReviewForm currentUserId={currentUserId} id={id} postedReviews={postedReviews}/> : null }
-  <ReviewContainer displayedReviews={displayedReviews}/>
+  <ReviewContainer currentUser={currentUser} displayedReviews={displayedReviews}/>
 </div>
     </>
   )

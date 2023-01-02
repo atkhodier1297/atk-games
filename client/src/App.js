@@ -9,6 +9,7 @@ import Cart from "./Cart";
 import AddProdForm from "./AddProdForm";
 import Profile from "./Profile";
 import PaymentComplete from "./PaymentComplete";
+import DeleteWarning from "./DeleteWarning";
 
 function App() {
 
@@ -85,6 +86,7 @@ function App() {
       <Routes>
         <Route path="/add-product" element={<AddProdForm postedProduct={postedProducts}  />}/>
         <Route path="/" element={<Home/>}/>
+        <Route path="/delete-account" element={<DeleteWarning/>}/>
         <Route path="/payment-complete" element={<PaymentComplete currentUser={currentUser}/>}/>
         <Route path="/profile" element={<Profile currentUser={currentUser} currentUserId={currentUserId}/>}/>
         <Route path="/signup" element={<Signup/>}/>

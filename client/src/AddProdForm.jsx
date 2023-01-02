@@ -39,7 +39,11 @@ function AddProdForm({ postedProducts }) {
 
   return (
     <>
-    <h2>Add Products</h2>
+    <div className="header-title">
+    <h1 id="fonts">Add Games</h1>
+    </div>
+    <br></br>
+    <br></br>
     <div className="ui large form">
       <form className="form" onSubmit={handleSubmit}>
         <input
@@ -103,7 +107,7 @@ function AddProdForm({ postedProducts }) {
         <br></br>
         <br></br>
          <button onClick={() => console.log("I was clicked")} className="ui blue button" type="submit">
-          Add Product
+          Add Game
         </button>
       </form>
       </div>

@@ -11,7 +11,7 @@ function AddButton() {
   
   return (
     <>
-    <a onClick={navAddProd} className="item">Add Game</a>
+    <a id="fonts" onClick={navAddProd} className="item">Add Game</a>
     </>
   )
 }
