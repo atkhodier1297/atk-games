@@ -20,3 +20,11 @@ body #fonts {
     color: white;
     font-size: 30px;
   }
+
+  .filter-background {
+    display: inline-flex;
+  }
+
+  .all-filters {
+    display: inline-flex;
+  }

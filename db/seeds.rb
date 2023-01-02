@@ -6,6 +6,7 @@ Product.destroy_all
 Review.destroy_all
 
 User.create(name: 'atkhodier', password: 'naruto', email: 'atkhodier@gmail.com', admin: true)
+User.create(name: 'antonioreid', password: 'antonioreid', email: 'antonioreid@gmail.com', admin: false)
 
 
 godOfWarRagnarok = Product.create(

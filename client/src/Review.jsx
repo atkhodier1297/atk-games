@@ -4,13 +4,13 @@ function Review({currentUser, review}) {
 
   const {user, description, rating, user_id} = review
 
-  // function showDelete(){
-  //   if (currentUserId === user_id) {
-  //     setShowReviewDelete(!showReviewDelete)
-  //   }
-  // }
+  function deleteReview(){
+    fetch("/reviews", {
+      method : "DELETE",
+    })
+  }
 
-  const deleteButton = currentUser.id === user_id ? <button id="fonts" className="ui blue button">Delete</button> : null
+  const deleteButton = currentUser.id === user_id ? <button onClick={deleteReview} id="fonts" className="ui small blue button">Delete</button> : null
 
   return (
     <>

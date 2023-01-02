@@ -3,6 +3,7 @@ import React from "react";
 function CategoryFilter({ price, onPriceChange, rating, onRatingChange, category, onCategoryChange }) {
   return (
     <>
+    <div className="filter-background">
     <div className="filter-cat">
       <select
       className="ui dropdown"
@@ -49,6 +50,7 @@ function CategoryFilter({ price, onPriceChange, rating, onRatingChange, category
        <option value="60">$ 60.00</option>
        <option value="70">$ 70.00</option>
      </select>
+   </div>
    </div>
    </>
   );

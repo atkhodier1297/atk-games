@@ -78,10 +78,10 @@ function GameContainer({ postedReviews, currentUser, currentUserId, handleEditFo
     <h1 id="fonts">Hello {currentUser.name}</h1>
     </div>
     <br></br>
-    <br></br>
+    <div className='all-filters'>
     <Search search={search} handleSearch={handleSearch}/> 
-    <br></br>
     <CategoryFilter price={selectedPrice} onPriceChange={handlePriceChange}  rating={selectedRating} onRatingChange={handleRatingChange} category={selectedCategory} onCategoryChange={handleCategoryChange}/>
+    </div>
     <br></br>
     <br></br>
     <Card.Group>{eachProduct}</Card.Group>
