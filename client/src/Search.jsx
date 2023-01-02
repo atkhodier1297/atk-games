@@ -2,10 +2,10 @@ import React from 'react'
 
 function Search({search, handleSearch}) {
   return (
-    <div className="ui centered large search">
-  <div className="ui icon input">
+    <div className="ui large form">
+  <div className="ui form"
+  >
     <input value={search} onChange={handleSearch} className="prompt" type="text" placeholder="Search Games..."/>
-    <i onClick={handleSearch} className="search icon"></i>
   </div>
 </div>
   )

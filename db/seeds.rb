@@ -6,9 +6,7 @@ Product.destroy_all
 Review.destroy_all
 
 User.create(name: 'atkhodier', password: 'naruto', email: 'atkhodier@gmail.com', admin: true)
-User.create(name: 'antonioreid', password: 'antonioreid', email: 'antonioreid@gmail.com', admin: false)
 
-cartOne = Cart.create(user_id: 2, total: 0)
 
 godOfWarRagnarok = Product.create(
     name: 'God of War Ragnarok',
@@ -40,7 +38,7 @@ stray = Product.create(
 nba2k23 = Product.create(
     name: 'NBA 2k23',
     description: 'Redefine the game as you put together your dream team in MyTEAM and develop your skills on the court with authentic gameplay in this iconic basketball video game.',
-    price: 52,
+    price: 50,
     img_url: 'https://media.gamestop.com/i/gamestop/11206859-11206849?fmt=auto&$pdp-gallery$',
     rating: 2,
     category: 'PS5 Game'
@@ -49,7 +47,7 @@ nba2k23 = Product.create(
 sonicFrontiers = Product.create(
     name: 'Sonic Frontiers',
     description: 'Join Sonic on his latest adventure in Sonic Frontiers. Sprint through a vast open zone using Sonic’s super speed, attack enemies head on, and gain new skills to boost Sonic’s range of moves.',
-    price: 65,
+    price: 60,
     img_url: 'https://media.gamestop.com/i/gamestop/20000861-680826cd?fmt=auto&$pdp-gallery$',
     rating: 5,
     category: 'PS5 Game'

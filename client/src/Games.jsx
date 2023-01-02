@@ -92,7 +92,7 @@ function Games({ postedReviews, currentUser, currentUserId, handleEditForm, hand
   <div className="extra content">
     <p>
       <i className="dollar sign icon"></i>
-      {price}.00
+      {price}
     </p>
   </div>
   <button id="fonts" onClick={() => addToCart(product)} className="ui red button">Add to Cart</button>
