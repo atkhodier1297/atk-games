@@ -29,6 +29,12 @@ class UsersController < ApplicationController
         render json: user, status: :accepted
     end
 
+    def destroy
+        user = user.find(params[:id])
+        user.destroy
+        head :no_content
+    end
+
     private
 
     def authorize

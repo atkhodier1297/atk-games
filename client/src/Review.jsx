@@ -10,7 +10,7 @@ function Review({removeReview, currentUser, review}) {
     }).then(() => removeReview(id))
   }
 
-  function reloadDeleteReview(){
+  function reloadDeleteReview() {
     deleteReview(id)
     window.location.reload()
   }

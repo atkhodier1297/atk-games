@@ -78,7 +78,7 @@ function GameContainer({ removeReview, postedReviews, currentUser, currentUserId
     <h1 id="fonts">Hello {currentUser.name}</h1>
     </div>
     <br></br>
-    <div className='all-filters'>
+    <div className='all-filters ui inverted segment'>
     <Search search={search} handleSearch={handleSearch}/> 
     <CategoryFilter price={selectedPrice} onPriceChange={handlePriceChange}  rating={selectedRating} onRatingChange={handleRatingChange} category={selectedCategory} onCategoryChange={handleCategoryChange}/>
     </div>

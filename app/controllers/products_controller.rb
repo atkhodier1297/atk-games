@@ -30,7 +30,6 @@ class ProductsController < ApplicationController
     def destroy
         product = Product.find(params[:id])
         product.destroy
-        render json: product
         head :no_content
     end
 

@@ -45,7 +45,7 @@ function AddProdForm({ postedProducts }) {
     <br></br>
     <br></br>
     <div className="ui large form">
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form ui inverted segment" onSubmit={handleSubmit}>
         <input
           className="name"
           type="text"

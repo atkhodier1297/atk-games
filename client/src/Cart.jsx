@@ -64,7 +64,7 @@ function Cart({ currentCart, setCurrentCart }) {
         <div className="ui cards">
         <div className="card">
           <div className="content">
-            <img className="right floated mini ui image" src={item.img_url}/>
+            <img className="right floated small ui image" src={item.img_url}/>
             <div className="header">
               {item.name}
             </div>
@@ -90,8 +90,12 @@ function Cart({ currentCart, setCurrentCart }) {
     <div className="header-title">
     <h1 id="fonts">Cart</h1>
     </div>
+    <br></br>
+    <div className='ui inverted segment'>
     <h2 id="fonts">There are {currentCart.products?.length} items in your cart.</h2>
+    </div>
     <div>{showCartProducts}</div>
+    <div className='ui inverted segment'>
     <h3 id="fonts">
         Sub Total:
         <i className="dollar sign icon"></i>
@@ -107,6 +111,7 @@ function Cart({ currentCart, setCurrentCart }) {
         <i className="dollar sign icon"></i>
         {finalPrice.toFixed()}.00
     </h3>
+    </div>
     <a onClick={() => reloadAllCart()} className="ui red button">Empty Cart</a>
     <button onClick={handleClick} className="ui blue button">Checkout</button>
     <div>

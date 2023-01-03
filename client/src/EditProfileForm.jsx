@@ -48,7 +48,7 @@ function EditProfileForm() {
   return (
     <>
     <div className="ui large form">
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form ui inverted segment" onSubmit={handleSubmit}>
         <input
           className="name"
           type="text"
@@ -80,7 +80,7 @@ function EditProfileForm() {
         <br></br>
         <br></br>
           <button className="ui blue button" type="submit">
-          Submit
+          Update
         </button>
       </form>
       </div>
