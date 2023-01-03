@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        user = user.find(params[:id])
+        user = User.find(params[:id])
         user.destroy
         head :no_content
     end

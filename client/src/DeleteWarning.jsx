@@ -1,7 +1,12 @@
 import React from 'react'
 
-function DeleteWarning() {
+function DeleteWarning({currentUser}) {
 
+  function deleteAccount(){
+    fetch(`/users/${currentUser.id}`, {
+      method : "DELETE",
+    })
+  }
 
   return (
     <>
@@ -15,7 +20,7 @@ function DeleteWarning() {
     press the delete button down below to confirm account deletion.
    </h2>
    </div>
-   <button id="fonts" className='ui red button'>Deactive Account</button>
+   <button onClick={deleteAccount} id="fonts" className='ui red button'>Deactive Account</button>
     </>
   )
 }

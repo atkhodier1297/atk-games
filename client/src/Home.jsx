@@ -4,6 +4,7 @@ function Home() {
 
   return (
     <>
+    <br></br>
     <div className="header-title">
   <h1 id="fonts">Welcome to ATK Games</h1>
   <p id="fonts">We have games for every modern console and a large selection of retro games! </p>
@@ -30,7 +31,7 @@ function Home() {
         <div className="column ui inverted segment">
         <h3 id="fonts">"Way better than buying games from Best Buy or Amazon."</h3>
           <h3>
-            <b id="fonts">Tom Cruise</b> Scientologist
+            <b id="fonts">Hideo Kojima</b> Elite Game Designer
           </h3>
         </div>
         <div className="column ui inverted segment">

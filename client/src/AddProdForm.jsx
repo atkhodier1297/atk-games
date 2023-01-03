@@ -39,10 +39,14 @@ function AddProdForm({ postedProducts }) {
 
   return (
     <>
+    <br></br>
     <div className="header-title">
     <h1 id="fonts">Add Games</h1>
     </div>
     <br></br>
+    <div className='ui centered header ui inverted segment'>
+      <h3 id="fonts" >If you're reading this then you're an admin! Add products to our inventory down below.</h3>
+      </div>
     <br></br>
     <div className="ui large form">
       <form className="form ui inverted segment" onSubmit={handleSubmit}>

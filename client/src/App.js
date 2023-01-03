@@ -91,7 +91,7 @@ function App() {
       <Routes>
         <Route path="/add-product" element={<AddProdForm postedProduct={postedProducts}  />}/>
         <Route path="/" element={<Home/>}/>
-        <Route path="/delete-account" element={<DeleteWarning/>}/>
+        <Route path="/delete-account" element={<DeleteWarning currentUser={currentUser}/>}/>
         <Route path="/payment-complete" element={<PaymentComplete currentUser={currentUser}/>}/>
         <Route path="/profile" element={<Profile currentUser={currentUser} currentUserId={currentUserId}/>}/>
         <Route path="/signup" element={<Signup/>}/>

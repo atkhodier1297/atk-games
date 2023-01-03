@@ -74,6 +74,7 @@ function GameContainer({ removeReview, postedReviews, currentUser, currentUserId
 
   return (
     <>
+    <br></br>
      <div className="header-title">
     <h1 id="fonts">Hello {currentUser.name}</h1>
     </div>

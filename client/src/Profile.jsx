@@ -12,6 +12,7 @@ function Profile({currentUser, currentUserId}) {
 
   return (
     <>
+    <br></br>
     <div className="header-title">
     <h1 id="fonts">{currentUser.name} Profile</h1>
     </div>
@@ -24,7 +25,8 @@ function Profile({currentUser, currentUserId}) {
     <br></br>
     { currentUserId ? <EditProfileForm/> : null }
     <br></br>
-    <button id="fonts" className='ui blue button' onClick={navDelete}>Deactivate Page</button>
+    <br></br>
+    { currentUserId ? <button id="fonts" className='ui blue button' onClick={navDelete}>Deactivate Page</button> : null }
     </>
   )
 }
