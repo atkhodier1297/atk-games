@@ -1,9 +1,9 @@
 import React from 'react'
 import Review from './Review';
 
-function ReviewContainer({currentUser, displayedReviews}) {
+function ReviewContainer({removeReview, currentUser, displayedReviews}) {
   const eachReview = displayedReviews.map((review) => (
-    <Review currentUser={currentUser} review={review} key={review.id}/>
+    <Review removeReview={removeReview} currentUser={currentUser} review={review} key={review.id}/>
   ))
   
   return (

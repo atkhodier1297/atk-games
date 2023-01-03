@@ -5,7 +5,7 @@ import { Card } from 'semantic-ui-react'
 import CategoryFilter from './CategoryFilter';
 
 
-function GameContainer({ postedReviews, currentUser, currentUserId, handleEditForm, handleEditProduct, 
+function GameContainer({ removeReview, postedReviews, currentUser, currentUserId, handleEditForm, handleEditProduct, 
   selectedProduct, setSelectedProduct,
   removeProduct, products, search, 
   handleSearch, inCart, currentCart, setCurrentCart}) {
@@ -65,7 +65,7 @@ function GameContainer({ postedReviews, currentUser, currentUserId, handleEditFo
   }
 
     const eachProduct = filteredProducts.map((product) => (
-      <Games postedReviews={postedReviews} currentUser={currentUser} currentUserId={currentUserId} selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
+      <Games removeReview={removeReview} postedReviews={postedReviews} currentUser={currentUser} currentUserId={currentUserId} selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
       handleEditForm={handleEditForm} handleEditProduct={handleEditProduct} 
       handleDelete={handleDelete} currentCart={currentCart} 
       setCurrentCart={setCurrentCart} 

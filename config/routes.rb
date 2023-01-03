@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  
+  resources :users
+  resources :reviews
+  resources :products
+  resources :charges
+  resources :carts
+  resources :cart_products
 
   post '/login', to: "sessions#create"
   post '/signup', to: "users#create"
@@ -11,14 +18,7 @@ Rails.application.routes.draw do
 
   get "/product-reviews/:id", to: "products#product_reviews"
   post "/add-reviews/:id", to: "reviews#add_reviews"
-  delete "/reviews", to: "reviews#destroy"
   post "/create-payment-intent", to: "charge#create"
 
-  resources :users
-  resources :reviews
-  resources :products
-  resources :charges
-  resources :carts
-  resources :cart_products
 
 end

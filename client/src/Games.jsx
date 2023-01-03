@@ -4,7 +4,7 @@ import ReviewContainer from './ReviewContainer'
 import EditProdForm from './EditProdForm'
 import AddReviewForm from './AddReviewForm'
 
-function Games({ postedReviews, currentUser, currentUserId, handleEditForm, handleEditProduct, 
+function Games({removeReview, postedReviews, currentUser, currentUserId, handleEditForm, handleEditProduct, 
   selectedProduct, setSelectedProduct, handleDelete, 
   product, currentCart, setCurrentCart }) {
 
@@ -64,11 +64,10 @@ function Games({ postedReviews, currentUser, currentUserId, handleEditForm, hand
     function handleReviewClick() {
       setShowReview(!showReview)
     }
-    
 
   return (
     <>
-    <div className="ui card">
+    <div className="ui link card">
   <div className="image">
     <img className='game-image' alt='game' src={img_url}/>
   </div>
@@ -100,11 +99,10 @@ function Games({ postedReviews, currentUser, currentUserId, handleEditForm, hand
   {currentUserId ? <button id="fonts" className="ui orange button" onClick={() => handleReviewClick()}>Add Review</button> : null }
   {currentUser.admin ? <button id="fonts" className="ui red button" onClick={() => handleDelete(id)}>Delete</button> : null }
   {currentUser.admin ? <button id="fonts" className="ui blue button" onClick={() => handleClick()}>Update</button> : null }
-  {/* {showDelete() ? <button id="fonts" className="ui blue button">Delete</button> : null } */}
   {showForm ? <EditProdForm selectedProduct={selectedProduct} handleEditForm={handleEditForm} 
   handleEditProduct={handleEditProduct}/> : null }
   {showReview ? <AddReviewForm currentUserId={currentUserId} id={id} postedReviews={postedReviews}/> : null }
-  <ReviewContainer currentUser={currentUser} displayedReviews={displayedReviews}/>
+  <ReviewContainer removeReview={removeReview} currentUser={currentUser} displayedReviews={displayedReviews}/>
 </div>
     </>
   )

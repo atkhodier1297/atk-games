@@ -62,6 +62,11 @@ function App() {
     setProducts(newProducts);
   }
 
+  function removeReview(id) {
+    const newReviews = reviews.filter((review) => review.id !== id)
+    setReviews(newReviews)
+  }
+
   const searchedProducts = products?.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   )
@@ -95,7 +100,7 @@ function App() {
         <Route path="/games" element={<GameContainer postedReviews={postedReviews} currentUser={currentUser} currentUserId={currentUserId} handleEditForm={handleEditForm} handleEditProduct={handleEditProduct}
         selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
         removeProduct={removeProduct} currentCart={currentCart} setCurrentCart={setCurrentCart} 
-        products={searchedProducts} search={search} handleSearch={handleSearch}/>}/>
+        products={searchedProducts} search={search} handleSearch={handleSearch} removeReview={removeReview}/>}/>
       </Routes>
     </>
   );

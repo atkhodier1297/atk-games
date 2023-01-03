@@ -1,16 +1,21 @@
 import React from 'react'
 
-function Review({currentUser, review}) {
+function Review({removeReview, currentUser, review}) {
 
-  const {user, description, rating, user_id} = review
+  const {id, user, description, rating, user_id} = review
 
-  function deleteReview(){
-    fetch("/reviews", {
+  function deleteReview(id){
+    fetch(`/reviews/${id}`, {
       method : "DELETE",
-    })
+    }).then(() => removeReview(id))
   }
 
-  const deleteButton = currentUser.id === user_id ? <button onClick={deleteReview} id="fonts" className="ui small blue button">Delete</button> : null
+  function reloadDeleteReview(){
+    deleteReview(id)
+    window.location.reload()
+  }
+
+  const deleteButton = currentUser.id === user_id ? <button onClick={reloadDeleteReview} id="fonts" className="ui small blue button">Delete</button> : null
 
   return (
     <>
@@ -19,7 +24,8 @@ function Review({currentUser, review}) {
       <div>{description}</div>
       <div>
       <i className="star icon"></i>
-        {rating}</div>
+        {rating}
+      </div>
         {deleteButton}
         {/* {showReviewDelete ? <button id="fonts" className="ui blue button">Delete</button> : null } */}
       </div>
