@@ -53,13 +53,11 @@ function Login() {
     <br></br>
     <div className ="ui middle aligned center aligned grid">
   <div className ="column">
-    <h2 className ="ui black image header">
-      <div id="fonts" className ="ui centered header ui inverted segment">
+      <h1 id="fonts" className ="ui centered header ui inverted segment">
         Log-in to your account
-      </div>
-    </h2>
+      </h1>
     <form className ="ui large form">
-      <div className ="ui stacked segment">
+      <div className ="ui stacked inverted segment">
         <div className ="field">
           <div className ="ui left icon input">
             <i className ="envelope icon"></i>
@@ -74,13 +72,13 @@ function Login() {
         </div>
         <div id="fonts"
         onClick={handleLogIn}
-        className ="ui fluid large black submit button">Login</div>
+        className ="ui fluid large blue submit button">Login</div>
       </div>
     </form>
-    <div id="fonts" className="ui message">
-      New to us? <button id="fonts" class="ui black button" onClick={handleSignup}>Sign Up</button>
+    <div id="fonts" className="ui inverted segment">
+      New to us? <button id="fonts" className="ui blue button" onClick={handleSignup}>Sign Up</button>
     </div>
-      <h3 className="error">{errors}</h3>
+      <h3 className="ui inverted segment">{errors}</h3>
   </div>
 </div>
     </>

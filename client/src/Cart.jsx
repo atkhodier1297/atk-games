@@ -87,7 +87,7 @@ function Cart({ currentCart, setCurrentCart }) {
   return (
     <>
     <br></br>
-    <div className="header-title">
+    <div className="ui centered header ui inverted segment">
     <h1 id="fonts">Cart</h1>
     </div>
     <br></br>

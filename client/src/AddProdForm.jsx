@@ -40,7 +40,7 @@ function AddProdForm({ postedProducts }) {
   return (
     <>
     <br></br>
-    <div className="header-title">
+    <div className="ui centered header ui inverted segment">
     <h1 id="fonts">Add Games</h1>
     </div>
     <br></br>
@@ -110,7 +110,7 @@ function AddProdForm({ postedProducts }) {
         ></input>
         <br></br>
         <br></br>
-         <button onClick={() => console.log("I was clicked")} className="ui blue button" type="submit">
+         <button onClick={() => console.log("I was clicked")} className="ui red button" type="submit">
           Add Game
         </button>
       </form>

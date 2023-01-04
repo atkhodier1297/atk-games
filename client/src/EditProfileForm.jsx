@@ -79,7 +79,7 @@ function EditProfileForm() {
         ></input>
         <br></br>
         <br></br>
-          <button className="ui blue button" type="submit">
+          <button className="ui red button" type="submit">
           Update
         </button>
       </form>

@@ -13,7 +13,7 @@ function Profile({currentUser, currentUserId}) {
   return (
     <>
     <br></br>
-    <div className="header-title">
+    <div className="ui centered header ui inverted segment">
     <h1 id="fonts">{currentUser.name}'s Profile</h1>
     </div>
     <br></br>
@@ -26,7 +26,7 @@ function Profile({currentUser, currentUserId}) {
     { currentUserId ? <EditProfileForm/> : null }
     <br></br>
     <br></br>
-    { currentUserId ? <button id="fonts" className='ui fluid large blue submit button' onClick={navDelete}>Deactivate Page</button> : null }
+    { currentUserId ? <button id="fonts" className='ui fluid large red submit button' onClick={navDelete}>Deactivate Page</button> : null }
     </>
   )
 }

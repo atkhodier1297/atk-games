@@ -78,12 +78,15 @@ function Games({removeReview, postedReviews, currentUser, currentUserId, handleE
     <div className="header">
       <span className="category">{category}
       <br></br>
-      <i className="dollar sign icon">{price}</i>
+      <i className="dollar sign icon">{price}.00</i>
       </span>
       <p>
       <i className="star icon"></i>
       {rating}/5 from ATK GAMES
     </p>
+    <p className="header">
+      {description}
+      </p>
     </div>
   </div>
 

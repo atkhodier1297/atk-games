@@ -50,13 +50,11 @@ function Signup() {
     <br></br>
     <div className ="ui middle aligned center aligned grid">
   <div className ="column">
-    <h2 className ="ui black image header">
-      <div id="fonts" className ="ui centered header ui inverted segment">
+      <h1 id="fonts" className ="ui centered header ui inverted segment">
         Create your account
-      </div>
-    </h2>
+      </h1>
     <form className ="ui large form">
-      <div className ="ui stacked segment">
+      <div className ="ui stacked inverted segment">
         <div className ="field">
           <div className ="ui left icon input">
             <i className ="envelope icon"></i>
@@ -75,12 +73,11 @@ function Signup() {
             <input onChange={(e) => setUserPassword(e.target.value)} type="password" name="password" placeholder="Password"/>
           </div>
         </div>
-        <div id="fonts"
-        onClick={signupClick}
-        className ="ui fluid large black submit button">Create Account</div>
+        <div id="fonts"onClick={signupClick}
+        className ="ui fluid large blue submit button">Create Account</div>
       </div>
     </form>
-    <h3 className="error">{errors}</h3>
+    <h3 className="ui inverted segment">{errors}</h3>
   </div>
 </div>
 </>
