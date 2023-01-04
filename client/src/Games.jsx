@@ -67,7 +67,7 @@ function Games({removeReview, postedReviews, currentUser, currentUserId, handleE
 
   return (
     <>
-    <div className="ui link card">
+    <div id="fonts" className="ui link card">
   <div className="image">
     <img className='game-image' alt='game' src={img_url}/>
   </div>
@@ -75,25 +75,18 @@ function Games({removeReview, postedReviews, currentUser, currentUserId, handleE
     <p className="header">
       {name}
       </p>
-    <div className="meta">
+    <div className="header">
       <span className="category">{category}
-     
+      <br></br>
+      <i className="dollar sign icon">{price}</i>
       </span>
       <p>
       <i className="star icon"></i>
       {rating}/5 from ATK GAMES
     </p>
     </div>
-    <div className="description">
-      {description}
-    </div>
   </div>
-  <div className="extra content">
-    <p>
-      <i className="dollar sign icon"></i>
-      {price}
-    </p>
-  </div>
+
   <button id="fonts" onClick={() => addToCart(product)} className="ui red button">Add to Cart</button>
   <button id="fonts" onClick={() => removeFromCart(product)} className="ui blue button">Remove from Cart</button>
   {currentUserId ? <button id="fonts" className="ui orange button" onClick={() => handleReviewClick()}>Add Review</button> : null }

@@ -54,7 +54,7 @@ function Login() {
     <div className ="ui middle aligned center aligned grid">
   <div className ="column">
     <h2 className ="ui black image header">
-      <div id="fonts" className ="content">
+      <div id="fonts" className ="ui centered header ui inverted segment">
         Log-in to your account
       </div>
     </h2>

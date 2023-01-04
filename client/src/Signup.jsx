@@ -51,7 +51,7 @@ function Signup() {
     <div className ="ui middle aligned center aligned grid">
   <div className ="column">
     <h2 className ="ui black image header">
-      <div id="fonts" className ="content">
+      <div id="fonts" className ="ui centered header ui inverted segment">
         Create your account
       </div>
     </h2>

@@ -68,15 +68,14 @@ function Cart({ currentCart, setCurrentCart }) {
             <div className="header">
               {item.name}
             </div>
-            <div className="meta">
+            <br></br>
+            <div className="header">
               {item.category}
+              <br></br>
+              <i className="dollar sign icon">{item.price}.00</i>
             </div>
-            <div className="description">
-            <i className="dollar sign icon"></i>
-              {item.price}.00
-            </div>
-            <div className='trash-mouse'>
-            <i onClick={() => reloadDelete()} className="trash icon"></i>
+            <div className='delete-item'>
+            <button onClick={() => reloadDelete()} className="ui tiny red button">Remove</button>
             </div>
           </div>
         </div>
@@ -97,6 +96,7 @@ function Cart({ currentCart, setCurrentCart }) {
     </div>
     <br></br>
     <div>{showCartProducts}</div>
+    <br></br>
     <div className='ui inverted segment'>
     <h3 id="fonts">
         Sub Total:
@@ -114,6 +114,7 @@ function Cart({ currentCart, setCurrentCart }) {
         {finalPrice.toFixed()}.00
     </h3>
     </div>
+    <br></br>
     <a onClick={() => reloadAllCart()} className="ui red button">Empty Cart</a>
     <button onClick={handleClick} className="ui blue button">Checkout</button>
     <div>
