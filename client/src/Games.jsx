@@ -4,7 +4,7 @@ import ReviewContainer from './ReviewContainer'
 import EditProdForm from './EditProdForm'
 import AddReviewForm from './AddReviewForm'
 
-function Games({removeReview, postedReviews, currentUser, currentUserId, handleEditForm, handleEditProduct, 
+function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeReview, postedReviews, currentUser, currentUserId, handleEditForm, handleEditProduct, 
   selectedProduct, setSelectedProduct, handleDelete, 
   product, currentCart, setCurrentCart }) {
 
@@ -98,7 +98,7 @@ function Games({removeReview, postedReviews, currentUser, currentUserId, handleE
   {showForm ? <EditProdForm selectedProduct={selectedProduct} handleEditForm={handleEditForm} 
   handleEditProduct={handleEditProduct}/> : null }
   {showReview ? <AddReviewForm currentUserId={currentUserId} id={id} postedReviews={postedReviews}/> : null }
-  <ReviewContainer removeReview={removeReview} currentUser={currentUser} displayedReviews={displayedReviews}/>
+  <ReviewContainer selectedReview={selectedReview} handleEditReview={handleEditReview} handleEditReviewForm={handleEditReviewForm} removeReview={removeReview} currentUser={currentUser} displayedReviews={displayedReviews}/>
 </div>
     </>
   )

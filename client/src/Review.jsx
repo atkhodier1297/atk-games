@@ -1,8 +1,15 @@
 import React from 'react'
+import { useState } from 'react'
+import EditReviewForm from './EditReviewForm'
 
-function Review({removeReview, currentUser, review}) {
+function Review({selectedReview, handleEditReview, handleEditReviewForm, removeReview, currentUser, review}) {
 
   const {id, user, description, rating, user_id} = review
+  const [showUpdateReview, setShowUpdateReview] = useState(false)
+
+  function updateReviewForm() {
+    setShowUpdateReview(!showUpdateReview)
+  }
 
   function deleteReview(id){
     fetch(`/reviews/${id}`, {
@@ -16,7 +23,8 @@ function Review({removeReview, currentUser, review}) {
   }
 
   const deleteButton = currentUser.id === user_id ? <button onClick={reloadDeleteReview} id="fonts" className="ui small blue button">Delete</button> : null
-
+  const updateButton = currentUser.id === user_id ? <button onClick={updateReviewForm} id="fonts" className="ui small red button">Edit</button> : null
+  
   return (
     <>
       <div className="reviews">
@@ -27,7 +35,8 @@ function Review({removeReview, currentUser, review}) {
         {rating}
       </div>
         {deleteButton}
-        {/* {showReviewDelete ? <button id="fonts" className="ui blue button">Delete</button> : null } */}
+        {updateButton}
+        {showUpdateReview ? <EditReviewForm id={id} selectedReview={selectedReview} handleEditReview={handleEditReview} handleEditReviewForm={handleEditReviewForm}/> : null}
       </div>
     </>
   )

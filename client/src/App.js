@@ -18,6 +18,7 @@ function App() {
   const [currentCart , setCurrentCart] = useState([])
   const [selectedProduct, setSelectedProduct] = useState("")
   const [reviews, setReviews] = useState("")
+  const [selectedReview, setSelectedReview] = useState("")
 
   const [currentUser, setCurrentUser] = useState({})
   const currentUserId = sessionStorage.getItem("user_id")
@@ -85,6 +86,20 @@ function App() {
     setProducts(updatedProducts)
   }
 
+  function handleEditReviewForm(name, value) {
+    setSelectedReview({
+      ...selectedReview, [name]: value,
+    })
+  }
+
+  function handleEditReview(updatedReview) {
+    const updatedReviews = reviews.map((review) =>
+    review.id === updatedReview.id ? updatedReview : review
+    )
+    setSelectedReview(updatedReview)
+    setReviews(updatedReviews)
+  }
+
   return (
     <>
     <Navbar currentCart={currentCart} postedProducts={postedProducts}/>
@@ -97,7 +112,9 @@ function App() {
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/cart" element={<Cart currentCart={currentCart} setCurrentCart={setCurrentCart}/>}/>
-        <Route path="/games" element={<GameContainer postedReviews={postedReviews} currentUser={currentUser} currentUserId={currentUserId} handleEditForm={handleEditForm} handleEditProduct={handleEditProduct}
+        <Route path="/games" element={<GameContainer selectedReview={selectedReview} handleEditReview={handleEditReview} handleEditReviewForm={handleEditReviewForm}
+        postedReviews={postedReviews} currentUser={currentUser} currentUserId={currentUserId} 
+        handleEditForm={handleEditForm} handleEditProduct={handleEditProduct}
         selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}
         removeProduct={removeProduct} currentCart={currentCart} setCurrentCart={setCurrentCart} 
         products={searchedProducts} search={search} handleSearch={handleSearch} removeReview={removeReview}/>}/>
