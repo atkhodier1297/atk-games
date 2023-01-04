@@ -92,10 +92,10 @@ function Cart({ currentCart, setCurrentCart }) {
     <h1 id="fonts">Cart</h1>
     </div>
     <br></br>
-    <br></br>
     <div className='ui inverted segment'>
     <h2 id="fonts">There are {currentCart.products?.length} items in your cart.</h2>
     </div>
+    <br></br>
     <div>{showCartProducts}</div>
     <div className='ui inverted segment'>
     <h3 id="fonts">

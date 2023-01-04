@@ -57,6 +57,7 @@ function Home() {
   </div>
       </div>
     </div>
+    <br></br>
     <div className="ui inverted vertical footer segment">
     <div className="ui container">
       <div className="ui stackable inverted divided equal height stackable grid">
