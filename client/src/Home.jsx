@@ -4,6 +4,7 @@ function Home() {
 
   return (
     <>
+    
     <br></br>
     <div className="ui centered header ui inverted segment">
   <h1 id="fonts">Welcome to ATK Games</h1>
