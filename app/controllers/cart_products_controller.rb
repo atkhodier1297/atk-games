@@ -15,7 +15,7 @@ class CartProductsController < ApplicationController
     end
 
     def destroy
-        cart_product = CartProduct.find_by(params[:id])
+        cart_product = CartProduct.find_by(cart: session[:cart_id], product_id: params[:id])
         cart = Cart.find(session[:cart])
         cart.total -= cart_product.product.price
         cart.save

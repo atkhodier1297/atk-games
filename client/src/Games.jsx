@@ -51,7 +51,7 @@ function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeR
   }
 
   function removeFromCart(){
-    fetch("/remove-from-cart", {
+    fetch(`/remove-from-cart/${id}`, {
       method: "DELETE"
     })
     .then(() => {
@@ -60,7 +60,7 @@ function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeR
       .then(cart => setCurrentCart(cart))
     })
   }
-
+  
     function handleClick() {
       setSelectedProduct(product)
       setShowForm(!showForm)
@@ -96,7 +96,7 @@ function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeR
   </div>
 
   {currentUserId ? <button id="fonts" onClick={() => addToCart(product)} className="ui red button">Add to Cart</button> : null }
-  {currentUserId ? <button id="fonts" onClick={() => removeFromCart(product)} className="ui blue button">Remove from Cart</button> : null }
+  {currentUserId ? <button id="fonts" onClick={() => removeFromCart(id)} className="ui blue button">Remove from Cart</button> : null }
   {currentUserId ? <button id="fonts" className="ui orange button" onClick={() => handleReviewClick()}>Add Review</button> : null }
   {currentUser.admin ? <button id="fonts" className="ui red button" onClick={() => handleDelete(id)}>Delete</button> : null }
   {currentUser.admin ? <button id="fonts" className="ui blue button" onClick={() => handleClick()}>Update</button> : null }
