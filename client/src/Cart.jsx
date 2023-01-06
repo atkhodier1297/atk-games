@@ -10,6 +10,9 @@ function Cart({ currentCart, setCurrentCart }) {
 
   const [clientSecret, setClientSecret] = useState("")
 
+
+
+
   function handleClick(){
     fetch('create-payment-intent', {
       method: "POST",
@@ -28,11 +31,11 @@ function Cart({ currentCart, setCurrentCart }) {
     .then(cart => setCurrentCart(cart))
   }, [])
 
-  function removeFromCart(){
-    fetch("/remove-from-cart" , {
-      method : "DELETE",
-    })
-  }
+  // function removeFromCart(){
+  //   fetch(`/remove-from-cart/${currentCart.products.id}` , {
+  //     method : "DELETE",
+  //   })
+  // }
 
   function removeAllCart(){
     fetch("/remove-all-cart" , {
@@ -40,10 +43,10 @@ function Cart({ currentCart, setCurrentCart }) {
     })
   }
 
-  function reloadDelete(){
-    removeFromCart()
-    window.location.reload()
-  }
+  // function reloadDelete(){
+  //   removeFromCart()
+  //   window.location.reload()
+  // }
 
   function reloadAllCart(){
     removeAllCart()
@@ -74,9 +77,9 @@ function Cart({ currentCart, setCurrentCart }) {
               <br></br>
               <i className="dollar sign icon">{item.price}.00</i>
             </div>
-            <div className='delete-item'>
+            {/* <div className='delete-item'>
             <button onClick={() => reloadDelete()} className="ui tiny red button">Remove</button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -81,13 +81,14 @@ function GameContainer({ selectedReview, handleEditReview, handleEditReviewForm,
     <h1 id="fonts">Log In or Sign Up to Purchase Games</h1>
     </div> }
     <br></br>
-    <div className='all-filters ui inverted segment'>
+    <div className='ui centered header ui inverted segment'>
     <Search search={search} handleSearch={handleSearch}/> 
+    <br></br>
     <CategoryFilter price={selectedPrice} onPriceChange={handlePriceChange}  rating={selectedRating} onRatingChange={handleRatingChange} category={selectedCategory} onCategoryChange={handleCategoryChange}/>
     </div>
     <br></br>
     <br></br>
-    <Card.Group>{eachProduct}</Card.Group>
+    <Card.Group className='ui centered'>{eachProduct}</Card.Group>
     
     </>
   )

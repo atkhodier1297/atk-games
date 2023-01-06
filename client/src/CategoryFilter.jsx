@@ -6,7 +6,7 @@ function CategoryFilter({ price, onPriceChange, rating, onRatingChange, category
     <div className="filter-background">
     <div className="filter-cat">
       <select
-      className="ui dropdown"
+      className="ui inverted segment ui dropdown"
         name="filter-cat"
         value={category}
         onChange={(e) => onCategoryChange(e.target.value)}
@@ -20,7 +20,7 @@ function CategoryFilter({ price, onPriceChange, rating, onRatingChange, category
     <br></br>
      <div className="filter-rating">
      <select
-     className="ui dropdown"
+     className="ui inverted segment ui dropdown"
        name="filter-rating"
        value={rating}
        onChange={(e) => onRatingChange(e.target.value)}
@@ -36,7 +36,7 @@ function CategoryFilter({ price, onPriceChange, rating, onRatingChange, category
    <br></br>
    <div className="filter-price">
      <select
-     className="ui dropdown"
+     className="ui inverted segment ui dropdown"
        name="filter-price"
        value={price}
        onChange={(e) => onPriceChange(e.target.value)}

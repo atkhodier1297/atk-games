@@ -19,7 +19,7 @@ function DeleteWarning({currentUser}) {
   return (
     <>
     <br></br>
-    <h1 id="fonts" className='header-title'>Deactivate {currentUser.name}'s Account</h1>
+    <h1 id="fonts" className="ui centered header ui inverted segment">Deactivate {currentUser.name}'s Account</h1>
     <br></br>
     <div className='ui inverted segment'>
     <h3 id="fonts" className='ui centered header'>Warning you are about to delete your ATK Games account. 
@@ -31,7 +31,7 @@ function DeleteWarning({currentUser}) {
    </h3>
    </div>
    <br></br>
-   <button onClick={deactivateLogOut} id="fonts" className='ui fluid large blue submit button'>Deactivate Account</button>
+   <button onClick={deactivateLogOut} id="fonts" className='ui fluid large red submit button'>Deactivate Account</button>
     </>
   )
 }

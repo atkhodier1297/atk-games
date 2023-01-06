@@ -100,6 +100,8 @@ function App() {
     setReviews(updatedReviews)
   }
 
+  
+
   return (
     <>
     <Navbar currentCart={currentCart} postedProducts={postedProducts}/>
@@ -111,7 +113,7 @@ function App() {
         <Route path="/profile" element={<Profile currentUser={currentUser} currentUserId={currentUserId}/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/cart" element={<Cart currentCart={currentCart} setCurrentCart={setCurrentCart}/>}/>
+        <Route path="/cart" element={<Cart products={products} currentCart={currentCart} setCurrentCart={setCurrentCart}/>}/>
         <Route path="/games" element={<GameContainer selectedReview={selectedReview} handleEditReview={handleEditReview} handleEditReviewForm={handleEditReviewForm}
         postedReviews={postedReviews} currentUser={currentUser} currentUserId={currentUserId} 
         handleEditForm={handleEditForm} handleEditProduct={handleEditProduct}

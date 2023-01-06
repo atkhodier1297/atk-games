@@ -13,13 +13,6 @@ function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeR
   const [showForm, setShowForm] = useState(false);
   const [showReview, setShowReview] = useState(false)
   const navigate = useNavigate()
-  // const [showReviewDelete, setShowReviewDelete] = useState(false)
-
-  // function showDelete(){
-  //   if (currentUserId === postedReviews.id) {
-  //     setShowReviewDelete(!showReviewDelete)
-  //   }
-  // }
 
   useEffect(() => {
     fetch("/current-cart")
@@ -50,7 +43,7 @@ function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeR
     }
   }
 
-  function removeFromCart(id){
+  function removeFromCart(){
     fetch(`/remove-from-cart/${id}`, {
       method: "DELETE"
     })

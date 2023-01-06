@@ -27,13 +27,9 @@ function Review({selectedReview, handleEditReview, handleEditReviewForm, removeR
   
   return (
     <>
-      <div className="reviews">
-      <div>{user?.name}</div>
+      <div className="review">
+      <div>{user?.name} <i className="star icon"></i>{rating}</div>
       <div>{description}</div>
-      <div>
-      <i className="star icon"></i>
-        {rating}
-      </div>
         {deleteButton}
         {updateButton}
         {showUpdateReview ? <EditReviewForm id={id} selectedReview={selectedReview} handleEditReview={handleEditReview} handleEditReviewForm={handleEditReviewForm}/> : null}
