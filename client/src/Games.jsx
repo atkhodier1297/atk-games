@@ -50,11 +50,11 @@ function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeR
     }
   }
 
-    function removeFromCart(){
-      fetch("/remove-from-cart" , {
-        method : "DELETE",
-      })
-    }
+  function removeFromCart(){
+    fetch("/remove-from-cart", {
+      method: "DELETE"
+    })
+  }
 
     function handleClick() {
       setSelectedProduct(product)
@@ -67,7 +67,7 @@ function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeR
 
   return (
     <>
-    <div id="fonts" className="ui link card">
+    <div id="fonts" className="ui card">
   <div className="image">
     <img className='game-image' alt='game' src={img_url}/>
   </div>

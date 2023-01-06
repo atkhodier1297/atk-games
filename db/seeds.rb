@@ -108,11 +108,11 @@ madden23 = Product.create(
     category: 'Xbox Game'
 )
 
-forzaHorizon5 = Product.create(
-    name: 'Forza Horizon 5',
-    description: 'Lead breathtaking expeditions across the vibrant and ever-evolving open world landscapes of Mexico with limitless, fun driving action in hundreds of the world’s greatest cars.',
+nickBrawl = Product.create(
+    name: 'Nickelodean All Star Brawl',
+    description: 'Nickelodeon All Star Brawl brings together your favorite Nickelodeon characters for one bombastic battle.',
     price: 40,
-    img_url: 'https://media.gamestop.com/i/gamestop/11148773/Forza-Horizon-5---Xbox-Series-X?fmt=auto&$pdp-gallery$',
+    img_url: 'https://media.gamestop.com/i/gamestop/11152185/Nickelodeon-All-Star-Brawl---Xbox-Series-X?fmt=auto&$pdp-gallery$',
     rating: 2,
     category: 'Xbox Game'
 )

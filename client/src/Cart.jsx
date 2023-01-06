@@ -97,6 +97,8 @@ function Cart({ currentCart, setCurrentCart }) {
     <br></br>
     <div>{showCartProducts}</div>
     <br></br>
+    <button onClick={() => reloadAllCart()} className="ui red button">Empty Cart</button>
+    <br></br>
     <div className='ui inverted segment'>
     <h3 id="fonts">
         Sub Total:
@@ -115,9 +117,8 @@ function Cart({ currentCart, setCurrentCart }) {
     </h3>
     </div>
     <br></br>
-    <a onClick={() => reloadAllCart()} className="ui red button">Empty Cart</a>
     <button onClick={handleClick} className="ui blue button">Checkout</button>
-    <div>
+    <div className='ui inverted segment'>
         {clientSecret && (
           <Elements options={options} stripe={stripePromise}>
             <PaymentForm removeAllCart={removeAllCart}/>
