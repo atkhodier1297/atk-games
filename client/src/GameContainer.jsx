@@ -75,9 +75,11 @@ function GameContainer({ selectedReview, handleEditReview, handleEditReviewForm,
   return (
     <>
     <br></br>
-     <div className="ui centered header ui inverted segment">
+     { currentUserId ? <div className="ui centered header ui inverted segment"> 
     <h1 id="fonts">Hello {currentUser.name}</h1>
-    </div>
+    </div> : <div className="ui centered header ui inverted segment"> 
+    <h1 id="fonts">Log In or Sign Up to Purchase Games</h1>
+    </div> }
     <br></br>
     <div className='all-filters ui inverted segment'>
     <Search search={search} handleSearch={handleSearch}/> 
