@@ -88,7 +88,7 @@ function GameContainer({ selectedReview, handleEditReview, handleEditReviewForm,
     </div>
     <br></br>
     <br></br>
-    <Card.Group className='ui centered'>{eachProduct}</Card.Group>
+    <Card.Group className='ui centered ui inverted segment'>{eachProduct}</Card.Group>
     
     </>
   )

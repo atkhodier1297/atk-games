@@ -96,8 +96,12 @@ function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeR
   {showForm ? <EditProdForm selectedProduct={selectedProduct} handleEditForm={handleEditForm} 
   handleEditProduct={handleEditProduct}/> : null }
   {showReview ? <AddReviewForm currentUserId={currentUserId} id={id} postedReviews={postedReviews}/> : null }
+  <div className='ui inverted segment'>
   <ReviewContainer selectedReview={selectedReview} handleEditReview={handleEditReview} handleEditReviewForm={handleEditReviewForm} removeReview={removeReview} currentUser={currentUser} displayedReviews={displayedReviews}/>
+  </div>
 </div>
+
+
     </>
   )
 }

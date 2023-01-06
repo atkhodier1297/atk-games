@@ -33,7 +33,7 @@ function AddReviewForm({currentUserId, id, postedReviews}) {
     
       return (
         <>
-        <div className="ui small form">
+        <div className="ui inverted segment ui small form">
           <form className="form" onSubmit={handleSubmit}>
             <input
               className="description"
@@ -43,6 +43,8 @@ function AddReviewForm({currentUserId, id, postedReviews}) {
               value={formData.description}
               onChange={handleChange}
             ></input>
+            <br></br>
+            <br></br>
              <input
               className="rating"
               type="text"
