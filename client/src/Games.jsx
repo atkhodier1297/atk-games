@@ -50,7 +50,7 @@ function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeR
     }
   }
 
-  function removeFromCart(){
+  function removeFromCart(id){
     fetch(`/remove-from-cart/${id}`, {
       method: "DELETE"
     })
@@ -60,7 +60,7 @@ function Games({ selectedReview, handleEditReview, handleEditReviewForm, removeR
       .then(cart => setCurrentCart(cart))
     })
   }
-  
+
     function handleClick() {
       setSelectedProduct(product)
       setShowForm(!showForm)
